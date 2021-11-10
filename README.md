@@ -1,2 +1,2 @@
-# app-building-crashcourse
-AI App Building Crash Course
+# AI App Building Crash Course
+
