@@ -17,6 +17,12 @@ pytest-asyncio = "*"
 tensorflow = "*"
 tensorflow-hub = "*"
 opencv-python = "*"
+pillow = "*"
+matplotlib = "*"
+google-cloud-speech = "*"
+ffmpeg-python = "*"
+google-cloud-texttospeech = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.8"
