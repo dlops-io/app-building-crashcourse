@@ -64,13 +64,9 @@ const Header = (props) => {
                             <Icon>home</Icon>
                             <Typography variant="caption">&nbsp;Home</Typography>
                         </IconButton>
-                        <IconButton color="inherit" component={Link} to="/leaderboard">
-                            <Icon>leaderboard</Icon>
-                            <Typography variant="caption">&nbsp;Leaderboard</Typography>
-                        </IconButton>
                         <IconButton color="inherit" component={Link} to="/currentmodel">
-                            <Icon>model_training</Icon>
-                            <Typography variant="caption">&nbsp;Model</Typography>
+                            <Icon>celebration</Icon>
+                            <Typography variant="caption">&nbsp;[Tutorial] Style Transfer</Typography>
                         </IconButton>
                     </div>
                 </Toolbar>

@@ -146,7 +146,7 @@ const Plots = (props) => {
                         </Grid>
                     </Grid>
                     <Grid container spacing={8}>
-                        <Grid item md={4}>
+                        <Grid item md={12}>
                             {stockData.length > 0 &&
                                 <Plot
                                     data={stockData}
