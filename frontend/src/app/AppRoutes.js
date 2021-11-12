@@ -7,6 +7,7 @@ import ImageClassification from "../components/ImageClassification";
 import Audio2Text from "../components/Audio2Text";
 import Text2Audio from "../components/Text2Audio";
 import Plots from "../components/Plots";
+import StyleTransfer from "../components/StyleTransfer";
 
 const AppRouter = (props) => {
 
@@ -21,6 +22,7 @@ const AppRouter = (props) => {
         <Route path="/text2audio" exact component={Text2Audio} />
         <Route path="/plots" exact component={Plots} />
         <Route path="/blank" exact component={Blank} />
+        <Route path="/styletransfer" exact component={StyleTransfer} />
         <Route component={Error404} />
       </Switch>
     </React.Fragment>
