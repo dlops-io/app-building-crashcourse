@@ -291,7 +291,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 * What do you see?
 
 Here is a screenshot of the completed App:
-![App](app-building-crashcourse.png)
+![App](images/app-building-crashcourse.png)
 
 
 
