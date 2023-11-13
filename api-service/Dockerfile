@@ -1,5 +1,5 @@
 # Use the official Debian-hosted Python image
-FROM python:3.8-slim-buster
+FROM python:3.9-slim-buster
 
 ARG DEBIAN_PACKAGES="build-essential cmake git wget unzip ffmpeg libglib2.0-0 libsm6 libxrender1 libxext6"
 
@@ -29,9 +29,11 @@ RUN set -ex; \
     pip install pipenv && \
     useradd -ms /bin/bash app -d /home/app -u 1000 -p "$(openssl passwd -1 Passw0rd)" && \
     mkdir -p /app && \
+    mkdir -p /persistent && \
+    chown app:app /persistent && \
     chown app:app /app
 
-# Expose port
+# Expose port of API service
 EXPOSE 9000
 
 # Switch to the new user
