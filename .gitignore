@@ -1,6 +1,5 @@
 # misc
 .DS_Store
-scratch.txt
 /deployment
-/secrets
+/frontend2
 /zzz_backups

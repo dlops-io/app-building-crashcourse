@@ -1,5 +1,54 @@
 # ⚡ App Building Crash Course
 
+In this tutorial we will go over a react app template and learn:
+* How to structure a React App
+* Integrate API calls to the backend from the frontend
+* Create components
+
+## Prerequisites
+* Have Docker installed
+* Have VSCode or an IDE of choice
+
+### Clone the github repository
+- Clone or download from [app-building-crashcourse](https://github.com/dlops-io/app-building-crashcourse)
+
+### Go into the frontend folder 
+- Open a terminal and go to the location where `app-building-crashcourse/frontend`
+
+### Build & Run Container
+- Run `sh docker-shell.sh` or `docker-shell.bat` for windows
+
+### Install React packages
+- If this is your first time running the react container run `yarn install`
+
+### Start Web Server
+- Run `yarn start` from the docker shell
+- Go to `http://localhost:3000`
+
+If you can see the web page at `http://localhost:3000`, you have your environment setup and ready to follow along for this tutorial.
+
+## Code Organization
+
+### React App Structure
+In a React app we want to break things up in an app into components to make the development and maintenance fo the app easier
+<img src="images/react-01.png"  width="700">
+
+Common components like header, footer, navigation bars are only built once. The core page component in a page is swapped out different app views
+<img src="images/react-02.png"  width="700">
+
+### Code Structure
+The general organization of a react app is as follows.
+<img src="images/react-04.png"  width="700">
+
+<img src="images/react-05.png"  width="700">
+
+### React Components
+At the core of an app we build react components that has HTML, Javascript (JSX), and CSS 
+<img src="images/react-06.png"  width="700">
+
+### React Components
+<img src="images/react-07.png"  width="700">
+
 
 ## App Layout & View
 ### Change the Fav Icon and browser title
@@ -291,7 +340,15 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 * What do you see?
 
 Here is a screenshot of the completed App:
-![App](app-building-crashcourse.png)
+![App](images/app-building-crashcourse.png)
+
+
+## References: Getting Started
+
+* Intro to HTML: https://www.w3schools.com/html/html_intro.asp
+* Intro to Javascript: https://www.w3schools.com/js/js_intro.asp
+* Intro to React: https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76
+* Getting started with React: https://reactjs.org/docs/getting-started.html
 
 
 
