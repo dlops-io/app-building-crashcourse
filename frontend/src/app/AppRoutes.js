@@ -9,8 +9,6 @@ import Text2Audio from "../components/Text2Audio";
 import Plots from "../components/Plots";
 import Todo from "../components/Todo";
 
-import StyleTransfer from "../components/StyleTransfer";
-
 const AppRouter = (props) => {
 
   console.log("================================== AppRouter ======================================");
