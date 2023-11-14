@@ -84,6 +84,13 @@ const TOC = (props) => {
                         <ListItemText primary='[Tutorial] Style Transfer' secondary="Build a Image style transfer component" />
                     </ListItem>
                 </List>
+                <Divider />
+                <List>
+                    <ListItem button component={Link} to="/chat">
+                        <ListItemIcon><Icon>chat</Icon></ListItemIcon>
+                        <ListItemText primary='Chat' />
+                    </ListItem>
+                </List>
             </main>
         </div>
     );

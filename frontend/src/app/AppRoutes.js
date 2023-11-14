@@ -8,6 +8,7 @@ import Audio2Text from "../components/Audio2Text";
 import Text2Audio from "../components/Text2Audio";
 import Plots from "../components/Plots";
 import Todo from "../components/Todo";
+import Chat from "../components/Chat";
 
 const AppRouter = (props) => {
 
@@ -24,6 +25,7 @@ const AppRouter = (props) => {
         <Route path="/text2audio" exact component={Text2Audio} />
         <Route path="/plots" exact component={Plots} />
         <Route path="/test" exact component={Blank} />
+        <Route path="/chat" exact component={Chat} />
         <Route component={Error404} />
       </Switch>
     </React.Fragment>
