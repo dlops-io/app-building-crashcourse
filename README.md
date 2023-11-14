@@ -30,17 +30,20 @@ If you can see the web page at `http://localhost:3000`, you have your environmen
 ## Code Organization
 
 ### React App Structure
+In a React app we want to break things up in an app into components to make the development and maintenance fo the app easier
 <img src="images/react-01.png"  width="700">
 
-### React App Structure
+Common components like header, footer, navigation bars are only built once. The core page component in a page is swapped out different app views
 <img src="images/react-02.png"  width="700">
 
 ### Code Structure
+The general organization of a react app is as follows.
 <img src="images/react-04.png"  width="700">
 
 <img src="images/react-05.png"  width="700">
 
 ### React Components
+At the core of an app we build react components that has HTML, Javascript (JSX), and CSS 
 <img src="images/react-06.png"  width="700">
 
 ### React Components
