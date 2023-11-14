@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+uvicorn = "*"
+fastapi = "*"
+pandas = "*"
+python-multipart = "*"
+protobuf = "==3.20.3"
+scipy = "==1.11.1"
+torch = "==2.0.1"
+sentencepiece = "==0.1.99"
+transformers = "==4.31.0"
+ctransformers = "==0.2.27"
+
+[requires]
+python_version = "3.9"
