@@ -9,6 +9,8 @@ import Text2Audio from "../components/Text2Audio";
 import Plots from "../components/Plots";
 import Todo from "../components/Todo";
 
+import StyleTransfer from "../components/StyleTransfer";
+
 const AppRouter = (props) => {
 
   console.log("================================== AppRouter ======================================");
@@ -17,11 +19,14 @@ const AppRouter = (props) => {
     <React.Fragment>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/blank" exact component={Blank} />
+        <Route path="/todo" exact component={Todo} />
         <Route path="/imageclassification" exact component={ImageClassification} />
         <Route path="/audio2text" exact component={Audio2Text} />
         <Route path="/text2audio" exact component={Text2Audio} />
-        <Route path="/todo" exact component={Todo} />
-        <Route path="/blank" exact component={Blank} />
+        <Route path="/plots" exact component={Plots} />
+        <Route path="/test" exact component={Blank} />
+        <Route path="/styletransfer" exact component={StyleTransfer} />
         <Route component={Error404} />
       </Switch>
     </React.Fragment>

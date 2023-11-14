@@ -5,11 +5,11 @@ import {
   CssBaseline
 } from '@material-ui/core';
 import './App.css';
-import Theme from "./Theme";
-import AppRoutes from "./AppRoutes";
 import Content from "../common/Content";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
+import Theme from "./Theme";
+import AppRoutes from "./AppRoutes";
 import DataService from '../services/DataService';
 
 
