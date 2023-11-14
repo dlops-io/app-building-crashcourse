@@ -29,15 +29,21 @@ If you can see the web page at `http://localhost:3000`, you have your environmen
 
 ## Code Organization
 
-### Overview
+### React App Structure
 <img src="images/react-01.png"  width="700">
 
+### React App Structure
 <img src="images/react-02.png"  width="700">
 
+### Code Structure
 <img src="images/react-04.png"  width="700">
 
 <img src="images/react-05.png"  width="700">
+
+### React Components
 <img src="images/react-06.png"  width="700">
+
+### React Components
 <img src="images/react-07.png"  width="700">
 
 
