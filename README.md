@@ -1,5 +1,34 @@
 # ⚡ App Building Crash Course
 
+In this tutorial we will go over a react app template and learn:
+* How to structure a React App
+* Integrate API calls to the backend from the frontend
+* Create components
+
+## Prerequisites
+* Have Docker installed
+* Have VSCode or an IDE of choice
+
+### Clone the github repository
+- Clone or download from [here](https://github.com/dlops-io/app-building-crashcourse)
+
+### Go into the frontend folder 
+- Open a terminal and go to the location where `app-building-crashcourse/frontend`
+
+### Build & Run Container
+- Run `sh docker-shell.sh` or `docker-shell.bat` for windows
+
+### Install React packages
+- If this is your first time running the react container run `yarn install`
+
+### Start Web Server
+- Run `yarn start` from the docker shell
+- Go to `http://localhost:3000`
+
+If you can see the web page at `http://localhost:3000`, you have your environment setup and ready to follow along for this tutorial.
+
+## Code Organization
+
 
 ## App Layout & View
 ### Change the Fav Icon and browser title
