@@ -10,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className="h-full">
-            <head> <link href="assets/logo.png" rel="shortcut icon" type="image/x-icon"></link></head>
+            <head>
+                <link href="assets/logo.png" rel="shortcut icon" type="image/x-icon"></link>
+            </head>
             <body className="flex flex-col min-h-screen bg-gray-50">
                 <Header />
                 <main className="flex-grow pt-16">{children}</main>
