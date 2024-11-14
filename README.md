@@ -16,13 +16,13 @@ In this tutorial we will go over a react app template and learn:
 - Open a terminal and go to the location where `app-building-crashcourse/frontend`
 
 ### Build & Run Container
-- Run `sh docker-shell.sh` or `docker-shell.bat` for windows
+- Run `sh docker-shell.sh`
 
-### Install React packages
-- If this is your first time running the react container run `yarn install`
+### Install Required packages
+- If this is your first time running the react container run `npm install`
 
 ### Start Web Server
-- Run `yarn start` from the docker shell
+- Run `npm run dev` from the docker shell
 - Go to `http://localhost:3000`
 
 If you can see the web page at `http://localhost:3000`, you have your environment setup and ready to follow along for this tutorial.
