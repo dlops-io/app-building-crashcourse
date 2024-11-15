@@ -2,8 +2,13 @@
 
 In this tutorial we will go over a react app template and learn:
 * How to structure a React App
-* Integrate API calls to the backend from the frontend
-* Create components
+* What are pages and components
+* Review various components like:
+    * Audio input
+    * Audio output
+    * Image input
+    * Plots and graphs
+    * Chat UI
 
 ## Prerequisites
 * Have Docker installed
