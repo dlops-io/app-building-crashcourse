@@ -1,4 +1,5 @@
 import { BASE_API_URL, uuid } from "./Common";
+import { mockChats } from "./SampleData";
 import axios from 'axios';
 
 console.log("BASE_API_URL:", BASE_API_URL)
@@ -147,20 +148,75 @@ const DataService = {
     },
 
     GetChats: async function (model, limit) {
-        console.log("/" + model + "/chats/?limit=" + limit)
-        return await api.get("/" + model + "/chats?limit=" + limit);
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+
+        const limitedChats = mockChats.slice(0, limit || mockChats.length);
+        return Promise.resolve({ data: limitedChats });
     },
     GetChat: async function (model, chat_id) {
-        return await api.get("/" + model + "/chats/" + chat_id);
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        const chat = mockChats.find(c => c.chat_id === chat_id);
+        if (!chat) {
+            throw new Error('Chat not found');
+        }
+        return Promise.resolve({ data: chat });
     },
     StartChatWithLLM: async function (model, message) {
-        return await api.post("/" + model + "/chats", message);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        const newChat = {
+            chat_id: uuid(),
+            title: message.content.slice(0, 20) + "...",
+            dts: Date.now(),
+            messages: [
+                {
+                    message_id: uuid(),
+                    role: "user",
+                    content: message.content,
+                    image_path: message.image_path
+                },
+                {
+                    message_id: uuid(),
+                    role: "assistant",
+                    content: `Mock response to: ${message.content}`
+                }
+            ]
+        };
+
+        mockChats.unshift(newChat);
+        return Promise.resolve({ data: newChat });
     },
     ContinueChatWithLLM: async function (model, chat_id, message) {
-        return await api.post("/" + model + "/chats/" + chat_id, message);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        const chat = mockChats.find(c => c.chat_id === chat_id);
+        if (!chat) {
+            throw new Error('Chat not found');
+        }
+
+        const newMessages = [
+            {
+                message_id: uuid(),
+                role: "user",
+                content: message.content,
+                image_path: message.image_path
+            },
+            {
+                message_id: uuid(),
+                role: "assistant",
+                content: `Mock response to: ${message.content}`
+            }
+        ];
+
+        chat.messages.push(...newMessages);
+        return Promise.resolve({ data: chat });
     },
     GetChatMessageImage: function (model, image_path) {
-        return BASE_API_URL + "/" + model + "/" + image_path;
+        // For testing, return a placeholder image
+        return `https://picsum.photos/800/600?random=${encodeURIComponent(image_path)}`;
     },
 }
 
