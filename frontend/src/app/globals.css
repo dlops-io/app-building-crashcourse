@@ -1,3 +1,4 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,22 +22,180 @@
     h6 {
         font-family: 'Playfair Display', serif;
     }
-
-    /* Custom scroll bar */
-    ::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-        @apply bg-gray-100;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        @apply bg-gradient-to-b from-purple-500 to-pink-500 rounded-full;
-    }
 }
 
 @layer components {
+
+    /* Layout Components */
+    .layout-container {
+        @apply container mx-auto px-4;
+    }
+
+    .page-wrapper {
+        @apply flex flex-col min-h-screen;
+    }
+
+    /* Header Styles */
+    .header-wrapper {
+        @apply fixed w-full top-0 z-50;
+    }
+
+    .header-container {
+        @apply bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 shadow-lg;
+    }
+
+    .header-content {
+        @apply container mx-auto px-4 h-16 flex items-center justify-between;
+    }
+
+    .header-logo {
+        @apply text-white hover:text-white/90 transition-colors flex items-center gap-2;
+    }
+
+    .nav-desktop {
+        @apply hidden md:flex items-center gap-6;
+    }
+
+    .nav-link {
+        @apply flex items-center gap-2 text-white/90 hover:text-white transition-colors;
+    }
+
+    .nav-link-active {
+        @apply font-semibold;
+    }
+
+    .nav-icon-wrapper {
+        @apply flex items-center justify-center w-5 h-5;
+    }
+
+    .nav-text {
+        @apply leading-none pt-0.5;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-button {
+        @apply md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors;
+    }
+
+    .mobile-menu {
+        @apply absolute top-16 left-0 right-0 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 md:hidden shadow-lg transform transition-transform duration-300 ease-in-out;
+    }
+
+    .mobile-menu-overlay {
+        @apply fixed inset-0 bg-black/50 md:hidden z-40;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        @apply pt-24 md:pt-32 pb-12 px-4 bg-gradient-to-br from-purple-100 via-pink-50 to-orange-50;
+    }
+
+    .hero-content {
+        @apply container mx-auto max-w-4xl text-center;
+    }
+
+    .hero-title {
+        @apply text-4xl md:text-6xl font-bold gradient-text mb-6 font-montserrat;
+    }
+
+    .hero-description {
+        @apply text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8;
+    }
+
+    /* Buttons */
+    .button-primary {
+        @apply px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow;
+    }
+
+    .button-secondary {
+        @apply px-8 py-3 bg-white text-purple-600 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow;
+    }
+
+    /* Cards */
+    .feature-card {
+        @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow cursor-pointer;
+    }
+
+    .feature-card-title {
+        @apply text-xl font-semibold mb-4 font-montserrat;
+    }
+
+    .feature-card-description {
+        @apply text-gray-600;
+    }
+
+    /* Content Sections */
+    .content-section {
+        @apply container mx-auto px-4 py-12;
+    }
+
+    .content-grid {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+    }
+
+    /* Footer */
+    .footer {
+        @apply w-full bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 py-6 mt-auto;
+    }
+
+    .footer-text {
+        @apply text-center text-white/90 text-sm;
+    }
+
+}
+
+@layer components {
+
+    /* Chat Layout */
+    .chat-container {
+        @apply flex flex-col h-screen overflow-hidden bg-gray-50;
+    }
+
+    .chat-main {
+        @apply flex-1 flex overflow-hidden;
+    }
+
+    /* Chat Sidebar */
+    .chat-sidebar {
+        @apply w-80 bg-gray-50 border-r border-gray-200 flex flex-col;
+    }
+
+    .chat-sidebar-header {
+        @apply flex items-center justify-between p-4 border-b border-gray-200;
+    }
+
+    /* Chat Messages Area */
+    .chat-messages {
+        @apply flex-1 flex flex-col overflow-hidden bg-gray-50;
+    }
+
+    .chat-messages-header {
+        @apply bg-white border-b border-gray-200 p-4 flex items-center gap-3;
+    }
+
+    .chat-messages-container {
+        @apply flex-1 overflow-y-auto p-4 space-y-6;
+    }
+
+    .chat-message {
+        @apply flex items-start gap-3 max-w-3xl mx-4;
+    }
+
+    .chat-message-user {
+        @apply ml-auto bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-2xl p-4;
+    }
+
+    .chat-message-assistant {
+        @apply mr-auto bg-white shadow-md rounded-2xl p-4;
+    }
+
+    /* Chat Input Area */
+    .chat-input-area {
+        @apply border-t border-gray-200 bg-white p-4;
+    }
+}
+
+@layer utilities {
     .gradient-text {
         @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400;
     }
@@ -44,97 +203,4 @@
     .gradient-bg {
         @apply bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400;
     }
-
-    .gradient-bg-hover {
-        @apply hover:bg-gradient-to-r hover:from-purple-700 hover:via-pink-600 hover:to-orange-500 transition-all duration-300;
-    }
-
-    .card {
-        @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6;
-    }
-
-    .button-primary {
-        @apply px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:from-purple-700 hover:to-pink-600;
-    }
-
-    .button-secondary {
-        @apply px-6 py-2 bg-white text-purple-600 rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 border border-purple-200 hover:bg-purple-50;
-    }
-
-    .container-custom {
-        @apply container mx-auto px-4 md:px-6;
-    }
-
-    .nav-link {
-        @apply flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full;
-    }
-
-    .nav-link-active {
-        @apply text-white after:w-full;
-    }
-}
-
-@layer utilities {
-    .text-shadow {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .text-gradient {
-        @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400;
-    }
-
-    .bg-glass {
-        @apply bg-white/80 backdrop-blur-sm;
-    }
-}
-
-/* Animation keyframes */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* Animation utilities */
-.animate-fadeIn {
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-.animate-slideIn {
-    animation: slideIn 0.3s ease-out forwards;
-}
-
-/* Layout utilities */
-.layout-wrapper {
-    @apply min-h-screen flex flex-col;
-}
-
-main {
-    @apply flex-grow;
-}
-
-/* Mobile menu utilities */
-.mobile-menu-link {
-    @apply py-3 px-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2;
-}
-
-/* Custom focus styles */
-.focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2;
 }

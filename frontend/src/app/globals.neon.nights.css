@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for theme colors */
+:root {
+    --neon-cyan: #00fff5;
+    --neon-magenta: #ff00ff;
+    --neon-purple: #bf00ff;
+    --dark-bg: #0a0a0f;
+    --darker-bg: #050507;
+    --panel-bg: #12121a;
+    --card-bg: #1a1a23;
+    --border-glow: 0 0 10px rgba(0, 255, 245, 0.3);
+    --text-glow: 0 0 8px rgba(0, 255, 245, 0.5);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        height: 100%;
+    }
+
+    body {
+        @apply antialiased;
+        background-color: var(--dark-bg);
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'BlenderPro', 'Rajdhani', sans-serif;
+    }
+}
+
+@layer components {
+
+    /* Layout Components */
+    .layout-container {
+        @apply container mx-auto px-4;
+    }
+
+    .page-wrapper {
+        @apply flex flex-col min-h-screen;
+        background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+        padding-top: 25px;
+    }
+
+    /* Header Styles */
+    .header-wrapper {
+        @apply fixed w-full top-0 z-50 backdrop-blur-lg border-b;
+        border-color: rgba(0, 255, 245, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 255, 245, 0.1);
+    }
+
+    .header-container {
+        background-color: rgba(5, 5, 7, 0.8);
+    }
+
+    .header-content {
+        @apply container mx-auto px-4 h-16 flex items-center justify-between;
+    }
+
+    .header-logo {
+        @apply flex items-center gap-2 transition-colors;
+        color: var(--neon-cyan);
+        text-shadow: var(--text-glow);
+    }
+
+    .header-logo:hover {
+        color: #ffffff;
+    }
+
+    .nav-desktop {
+        @apply hidden md:flex items-center gap-6;
+    }
+
+    .nav-link {
+        @apply flex items-center gap-2 transition-all duration-300;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-link:hover {
+        color: var(--neon-cyan);
+        text-shadow: var(--text-glow);
+    }
+
+    .nav-link-active {
+        color: var(--neon-cyan);
+        text-shadow: var(--text-glow);
+    }
+
+    /* Hero Section */
+    .hero-section {
+        @apply pt-24 md:pt-32 pb-12 px-4;
+        background: linear-gradient(45deg,
+                rgba(191, 0, 255, 0.1),
+                rgba(0, 255, 245, 0.1));
+    }
+
+    .hero-content {
+        @apply container mx-auto max-w-4xl text-center;
+    }
+
+    .hero-title {
+        @apply text-4xl md:text-6xl font-bold mb-6;
+        background: linear-gradient(to right, var(--neon-cyan), var(--neon-magenta));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 20px rgba(0, 255, 245, 0.3);
+    }
+
+    .hero-description {
+        @apply text-lg md:text-xl mb-8;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Buttons */
+    .button-primary {
+        @apply px-8 py-3 rounded-md font-semibold relative overflow-hidden transition-all duration-300;
+        background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+        box-shadow: 0 0 15px rgba(0, 255, 245, 0.3);
+    }
+
+    .button-primary:hover {
+        box-shadow: 0 0 30px rgba(0, 255, 245, 0.5);
+        transform: translateY(-1px);
+    }
+
+    .button-secondary {
+        @apply px-8 py-3 rounded-md font-semibold transition-all duration-300;
+        background-color: var(--panel-bg);
+        color: var(--neon-cyan);
+        border: 1px solid rgba(0, 255, 245, 0.3);
+        box-shadow: 0 0 10px rgba(0, 255, 245, 0.1);
+    }
+
+    .button-secondary:hover {
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 20px rgba(0, 255, 245, 0.2);
+        text-shadow: var(--text-glow);
+    }
+
+    /* Cards */
+    .feature-card {
+        @apply p-6 rounded-lg transition-all duration-300;
+        background-color: var(--card-bg);
+        border: 1px solid rgba(0, 255, 245, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-card:hover {
+        border-color: rgba(0, 255, 245, 0.3);
+        box-shadow: 0 8px 30px rgba(0, 255, 245, 0.15);
+        transform: scale(1.02);
+    }
+
+    .feature-card-title {
+        @apply text-xl font-semibold mb-4;
+        color: var(--neon-cyan);
+        text-shadow: var(--text-glow);
+    }
+
+    .feature-card-description {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Footer */
+    .footer {
+        @apply w-full py-6 mt-auto border-t;
+        background-color: var(--darker-bg);
+        border-color: rgba(0, 255, 245, 0.1);
+        box-shadow: 0 -4px 20px rgba(0, 255, 245, 0.1);
+    }
+
+    .footer-text {
+        @apply text-center;
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+@layer utilities {
+    .neon-text {
+        color: var(--neon-cyan);
+        text-shadow: var(--text-glow);
+    }
+
+    .neon-border {
+        border: 1px solid rgba(0, 255, 245, 0.3);
+        box-shadow: var(--border-glow);
+    }
+
+    .cyberpunk-gradient {
+        background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta), var(--neon-purple));
+    }
+}
+
+/* Animations */
+@keyframes neonPulse {
+    0% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+.animate-neon {
+    animation: neonPulse 2s infinite;
+}
+
+@keyframes borderFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-border {
+    background: linear-gradient(45deg,
+            var(--neon-cyan),
+            var(--neon-magenta),
+            var(--neon-purple),
+            var(--neon-cyan));
+    background-size: 300% 300%;
+    animation: borderFlow 6s ease infinite;
+}
