@@ -54,6 +54,8 @@ The general organization of a react app is as follows.
 * Intro to Javascript: https://www.w3schools.com/js/js_intro.asp
 * Intro to React: https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76
 * Getting started with React: https://reactjs.org/docs/getting-started.html
+* Getting started with Next: https://nextjs.org/docs/app/getting-started
+* CSS: Tailwind for React: https://tailwindui.com/documentation#react-creating-components 
 
 
 
