@@ -11,6 +11,7 @@ const Plot = dynamic(() => import('react-plotly.js'), {
 });
 
 export default function PlotDisplay() {
+    // Component States
     const [stockData, setStockData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -51,6 +52,7 @@ export default function PlotDisplay() {
         }
     };
 
+    // Setup Component
     useEffect(() => {
         const loadData = async () => {
             try {
@@ -69,6 +71,7 @@ export default function PlotDisplay() {
         loadData();
     }, []);
 
+    // UI View
     return (
         <div className="space-y-8">
             {/* Basic Charts Section */}

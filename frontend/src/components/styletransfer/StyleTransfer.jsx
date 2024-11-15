@@ -5,6 +5,7 @@ import { Brush, Photo, Refresh } from '@mui/icons-material';
 import DataService from '@/services/DataService';
 
 export default function StyleTransfer() {
+    // Component States
     const [numImages] = useState(12);
     const [contentImages, setContentImages] = useState([]);
     const [styleImages, setStyleImages] = useState([]);
@@ -13,15 +14,16 @@ export default function StyleTransfer() {
     const [prediction, setPrediction] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    // Setup Component
     useEffect(() => {
         loadContentImages();
         loadStyleImages();
     }, []);
-
     useEffect(() => {
         applyStyleTransfer();
     }, [selectedContentImage, selectedStyleImage]);
 
+    // Handlers
     const loadContentImages = async () => {
         try {
             const response = await DataService.StyleTransferGetContentImages();
@@ -67,6 +69,7 @@ export default function StyleTransfer() {
             .slice(0, numImages);
     };
 
+    // UI View
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Style Images Section */}

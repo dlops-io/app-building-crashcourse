@@ -9,6 +9,7 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import AppsIcon from '@mui/icons-material/Apps';
 
 export default function Header() {
+    // Component States
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
 
@@ -20,6 +21,7 @@ export default function Header() {
         { name: 'AI Assistant', path: '/chat', icon: <SmartToy fontSize="small" /> }
     ];
 
+    // UI View
     return (
         <>
             <header className="header-wrapper">

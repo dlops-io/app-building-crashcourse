@@ -2,9 +2,11 @@
 import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+    // Component States
     const pathname = usePathname();
     if (pathname === '/chat') return null;
 
+    // UI View
     return (
         <footer className="footer">
             <div className="layout-container">

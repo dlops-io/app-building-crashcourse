@@ -32,6 +32,7 @@ export default function ChatHistory({
         fetchData();
     }, [model]);
 
+    // UI View
     return (
         <div className="max-w-4xl mx-auto w-full">
             <div className="flex items-center justify-between mb-6">

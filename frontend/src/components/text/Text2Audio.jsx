@@ -5,10 +5,12 @@ import { RecordVoiceOver, PlayArrow, History } from '@mui/icons-material';
 import DataService from '@/services/DataService';
 
 export default function Text2Audio() {
+    // Component States
     const [text, setText] = useState('');
     const [outputs, setOutputs] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
+    // Handlers
     const handleSynthesis = async () => {
         if (!text.trim()) return;
 
@@ -24,6 +26,7 @@ export default function Text2Audio() {
         }
     };
 
+    // UI View
     return (
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Input Section */}
@@ -44,8 +47,8 @@ export default function Text2Audio() {
                                 onClick={handleSynthesis}
                                 disabled={!text.trim() || isLoading}
                                 className={`w-full py-3 px-4 rounded-lg flex items-center justify-center gap-2 ${text.trim() && !isLoading
-                                        ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:from-purple-700 hover:to-pink-600'
-                                        : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                    ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:from-purple-700 hover:to-pink-600'
+                                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                     } transition-all duration-200`}
                             >
                                 <RecordVoiceOver />

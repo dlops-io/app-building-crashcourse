@@ -8,15 +8,16 @@ import {
 import DataService from '@/services/DataService';
 
 export default function ImageClassification() {
+    // Component States
     const inputFile = useRef(null);
     const [image, setImage] = useState(null);
     const [prediction, setPrediction] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    // Handlers
     const handleImageUploadClick = () => {
         inputFile.current.click();
     };
-
     const handleOnChange = async (event) => {
         try {
             const file = event.target.files[0];
@@ -38,6 +39,7 @@ export default function ImageClassification() {
         }
     };
 
+    // UI View
     return (
         <div className="space-y-6">
             {/* Results Table */}

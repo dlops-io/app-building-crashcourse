@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { AddCircle, CheckBoxOutlineBlank, Delete, Edit } from '@mui/icons-material';
 
 export default function Todo() {
-    // State
+    // Component States
     const [text, setText] = useState('');
     const [todos, setTodos] = useState([]);
     const [editingId, setEditingId] = useState(null);
@@ -21,16 +21,13 @@ export default function Todo() {
             setText('');
         }
     }
-
     const handleDelete = (id) => {
         setTodos(todos.filter(todo => todo.id !== id));
     }
-
     const handleEdit = (todo) => {
         setEditingId(todo.id);
         setEditText(todo.text);
     }
-
     const handleSaveEdit = (id) => {
         setTodos(todos.map(todo =>
             todo.id === id ? { ...todo, text: editText } : todo
@@ -38,13 +35,13 @@ export default function Todo() {
         setEditingId(null);
         setEditText('');
     }
-
     const handleToggleComplete = (id) => {
         setTodos(todos.map(todo =>
             todo.id === id ? { ...todo, completed: !todo.completed } : todo
         ));
     }
 
+    // UI View
     return (
         <div className="space-y-8">
             {/* Add Todo Section */}

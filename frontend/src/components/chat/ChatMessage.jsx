@@ -46,6 +46,7 @@ export default function ChatMessage({
         });
     };
 
+    // UI View
     return (
         <div className="flex flex-col h-full overflow-hidden">
             {chat && (

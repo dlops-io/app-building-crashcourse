@@ -11,6 +11,7 @@ const recorder = new MicRecorder({
 });
 
 export default function Audio2Text() {
+    // Component States
     const [isRecording, setIsRecording] = useState(false);
     const [blobURL, setBlobURL] = useState(null);
     const [isBlocked, setIsBlocked] = useState(false);
@@ -18,7 +19,7 @@ export default function Audio2Text() {
     const [transcriptionResults, setTranscriptionResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    // Request microphone permission on mount
+    // Setup Component
     useEffect(() => {
         navigator.mediaDevices.getUserMedia({ audio: true })
             .then(() => {
@@ -31,6 +32,7 @@ export default function Audio2Text() {
             });
     }, []);
 
+    // Handlers
     const handleStartRecording = () => {
         if (isBlocked) {
             console.log('Permission Denied');
@@ -44,7 +46,6 @@ export default function Audio2Text() {
             })
             .catch((e) => console.error(e));
     };
-
     const handleStopRecording = async () => {
         try {
             const [buffer, blob] = await recorder.stop().getMp3();
@@ -64,6 +65,7 @@ export default function Audio2Text() {
         }
     };
 
+    // UI View
     return (
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Recording Section */}
@@ -96,8 +98,8 @@ export default function Audio2Text() {
                                 <button
                                     onClick={isRecording ? handleStopRecording : handleStartRecording}
                                     className={`p-4 rounded-full transition-all ${isRecording
-                                            ? 'bg-red-500 hover:bg-red-600'
-                                            : 'bg-purple-500 hover:bg-purple-600'
+                                        ? 'bg-red-500 hover:bg-red-600'
+                                        : 'bg-purple-500 hover:bg-purple-600'
                                         }`}
                                 >
                                     {isRecording ? (

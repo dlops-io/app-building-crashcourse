@@ -30,6 +30,7 @@ export default function ChatHistorySidebar({
         fetchData();
     }, []);
 
+    // UI View
     return (
         <div className="flex flex-col h-full bg-white border-r border-gray-200">
             <div className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">
