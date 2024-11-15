@@ -48,6 +48,7 @@ The general organization of a react app is as follows.
 <img src="images/react-03.1.png"  width="700">
 
 <img src="images/react-03.png"  width="700">
+
 ## References: Getting Started
 * Intro to HTML: https://www.w3schools.com/html/html_intro.asp
 * Intro to Javascript: https://www.w3schools.com/js/js_intro.asp
