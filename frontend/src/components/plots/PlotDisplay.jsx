@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { CircularProgress } from '@mui/material';
 
-// Dynamically import Plot with no SSR
+// Dynamically import Plot with no SSR(Server Side Rendering)
 const Plot = dynamic(() => import('react-plotly.js'), {
     ssr: false,
     loading: () => <div className="flex justify-center p-8"><CircularProgress /></div>
