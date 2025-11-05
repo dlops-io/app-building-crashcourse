@@ -157,3 +157,259 @@ export const mockChats = [
         ]
     }
 ]
+
+// Mock property data for San Francisco area
+export const mockProperties = [
+    {
+        id: uuid(),
+        title: "Modern Downtown Loft",
+        price: 1250000,
+        type: "apartment",
+        bedrooms: 2,
+        bathrooms: 2,
+        sqft: 1450,
+        location: {
+            lat: 37.7879,
+            lng: -122.4074,
+            address: "123 Market Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94103"
+        },
+        description: "Stunning modern loft in the heart of downtown with floor-to-ceiling windows and city views.",
+        imageUrl: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
+        features: ["Hardwood Floors", "City View", "Walk-in Closet", "Parking"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Victorian Style Home",
+        price: 2850000,
+        type: "house",
+        bedrooms: 4,
+        bathrooms: 3,
+        sqft: 2800,
+        location: {
+            lat: 37.7649,
+            lng: -122.4294,
+            address: "456 Castro Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94114"
+        },
+        description: "Beautifully restored Victorian home with original details and modern amenities.",
+        imageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop",
+        features: ["Garden", "Fireplace", "Updated Kitchen", "Parking"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Luxury Marina Condo",
+        price: 1950000,
+        type: "condo",
+        bedrooms: 3,
+        bathrooms: 2.5,
+        sqft: 1850,
+        location: {
+            lat: 37.8044,
+            lng: -122.4382,
+            address: "789 Marina Boulevard",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94123"
+        },
+        description: "Elegant condo with panoramic bay views and access to premium building amenities.",
+        imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
+        features: ["Bay View", "Gym", "Pool", "Concierge"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Cozy Mission District Apartment",
+        price: 725000,
+        type: "apartment",
+        bedrooms: 1,
+        bathrooms: 1,
+        sqft: 850,
+        location: {
+            lat: 37.7599,
+            lng: -122.4148,
+            address: "321 Valencia Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94110"
+        },
+        description: "Charming apartment in vibrant Mission District, close to restaurants and nightlife.",
+        imageUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop",
+        features: ["In-Unit Laundry", "Natural Light", "Storage"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Pacific Heights Estate",
+        price: 5200000,
+        type: "house",
+        bedrooms: 5,
+        bathrooms: 4.5,
+        sqft: 4200,
+        location: {
+            lat: 37.7919,
+            lng: -122.4372,
+            address: "555 Pacific Avenue",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94133"
+        },
+        description: "Magnificent estate in prestigious Pacific Heights with Golden Gate Bridge views.",
+        imageUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+        features: ["View", "Chef's Kitchen", "Wine Cellar", "Garden", "Garage"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Noe Valley Townhouse",
+        price: 1650000,
+        type: "townhouse",
+        bedrooms: 3,
+        bathrooms: 2.5,
+        sqft: 1950,
+        location: {
+            lat: 37.7505,
+            lng: -122.4325,
+            address: "234 24th Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94114"
+        },
+        description: "Sunny townhouse in family-friendly Noe Valley with private patio and modern finishes.",
+        imageUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+        features: ["Private Patio", "Modern Kitchen", "Parking", "Storage"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Russian Hill Penthouse",
+        price: 3750000,
+        type: "condo",
+        bedrooms: 3,
+        bathrooms: 3,
+        sqft: 2400,
+        location: {
+            lat: 37.8014,
+            lng: -122.4189,
+            address: "888 Green Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94133"
+        },
+        description: "Spectacular penthouse with 360-degree views and high-end finishes throughout.",
+        imageUrl: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
+        features: ["Rooftop Terrace", "360 Views", "Smart Home", "Doorman"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "SOMA Studio Loft",
+        price: 575000,
+        type: "apartment",
+        bedrooms: 1,
+        bathrooms: 1,
+        sqft: 750,
+        location: {
+            lat: 37.7767,
+            lng: -122.3982,
+            address: "777 Folsom Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94103"
+        },
+        description: "Trendy studio loft in SOMA with exposed brick and high ceilings.",
+        imageUrl: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
+        features: ["Exposed Brick", "High Ceilings", "Gym", "Bike Storage"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Sunset District Family Home",
+        price: 1450000,
+        type: "house",
+        bedrooms: 3,
+        bathrooms: 2,
+        sqft: 1850,
+        location: {
+            lat: 37.7565,
+            lng: -122.4955,
+            address: "999 Irving Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94122"
+        },
+        description: "Classic San Francisco home near Ocean Beach with large backyard and garage.",
+        imageUrl: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop",
+        features: ["Backyard", "Near Beach", "Garage", "Fireplace"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Financial District High-Rise",
+        price: 1100000,
+        type: "condo",
+        bedrooms: 2,
+        bathrooms: 2,
+        sqft: 1350,
+        location: {
+            lat: 37.7946,
+            lng: -122.3999,
+            address: "101 California Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94111"
+        },
+        description: "Modern condo in the heart of Financial District with building amenities.",
+        imageUrl: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+        features: ["City View", "Concierge", "Gym", "Pool"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "Hayes Valley Cottage",
+        price: 1350000,
+        type: "house",
+        bedrooms: 2,
+        bathrooms: 1.5,
+        sqft: 1250,
+        location: {
+            lat: 37.7749,
+            lng: -122.4262,
+            address: "456 Hayes Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94102"
+        },
+        description: "Charming cottage in trendy Hayes Valley with garden and updated interior.",
+        imageUrl: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+        features: ["Garden", "Updated", "Natural Light", "Storage"],
+        status: "For Sale"
+    },
+    {
+        id: uuid(),
+        title: "North Beach Classic",
+        price: 2200000,
+        type: "apartment",
+        bedrooms: 3,
+        bathrooms: 2,
+        sqft: 1750,
+        location: {
+            lat: 37.8007,
+            lng: -122.4100,
+            address: "333 Columbus Avenue",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94133"
+        },
+        description: "Elegant apartment in historic North Beach with Italian charm and modern updates.",
+        imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=600&fit=crop",
+        features: ["Hardwood", "Balcony", "Updated Kitchen", "Storage"],
+        status: "For Sale"
+    }
+];

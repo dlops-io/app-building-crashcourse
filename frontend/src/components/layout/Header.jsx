@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Menu, X, BarChart, List, Grid3x3, Bot } from 'lucide-react';
+import { Home, Menu, X, BarChart, List, Grid3x3, Bot, MapPin } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
@@ -16,6 +16,7 @@ export default function Header() {
         { name: 'Todo', path: '/todo', icon: <List className="h-5 w-5" /> },
         { name: 'Grids', path: '/styletransfer', icon: <Grid3x3 className="h-5 w-5" /> },
         { name: 'Plots', path: '/plots', icon: <BarChart className="h-5 w-5" /> },
+        { name: 'Map', path: '/map', icon: <MapPin className="h-5 w-5" /> },
         { name: 'AI Assistant', path: '/chat', icon: <Bot className="h-5 w-5" /> }
     ];
 

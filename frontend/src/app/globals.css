@@ -250,3 +250,41 @@
         @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60;
     }
 }
+
+/* Leaflet Map Styles */
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Fix for custom marker icons */
+.custom-marker {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Dark mode adjustments for Leaflet */
+.dark .leaflet-container {
+    background: hsl(var(--background));
+}
+
+.dark .leaflet-popup-content-wrapper {
+    background: hsl(var(--card));
+    color: hsl(var(--foreground));
+}
+
+.dark .leaflet-popup-tip {
+    background: hsl(var(--card));
+}
+
+/* Ensure map controls are visible in dark mode */
+.dark .leaflet-control-zoom a {
+    background: hsl(var(--card));
+    color: hsl(var(--foreground));
+    border-color: hsl(var(--border));
+}
+
+.dark .leaflet-control-zoom a:hover {
+    background: hsl(var(--accent));
+}

@@ -1,5 +1,5 @@
 import { BASE_API_URL, uuid } from "./Common";
-import { mockChats } from "./SampleData";
+import { mockChats, mockProperties } from "./SampleData";
 import axios from 'axios';
 
 console.log("BASE_API_URL:", BASE_API_URL)
@@ -325,6 +325,56 @@ const DataService = {
                 bollingerLower: parseFloat((Math.random() * 30 + 110).toFixed(2))
             }
         };
+    },
+
+    // Real Estate Property Services
+    GetPropertyListings: async function () {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        return Promise.resolve({ data: mockProperties });
+    },
+
+    GetPropertyById: async function (id) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        const properties = await this.GetPropertyListings();
+        const property = properties.data.find(p => p.id === id);
+
+        if (!property) {
+            throw new Error('Property not found');
+        }
+
+        return Promise.resolve({ data: property });
+    },
+
+    FilterProperties: async function (filters) {
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        const properties = await this.GetPropertyListings();
+        let filtered = properties.data;
+
+        if (filters.type && filters.type !== 'all') {
+            filtered = filtered.filter(p => p.type === filters.type);
+        }
+
+        if (filters.minPrice) {
+            filtered = filtered.filter(p => p.price >= filters.minPrice);
+        }
+
+        if (filters.maxPrice) {
+            filtered = filtered.filter(p => p.price <= filters.maxPrice);
+        }
+
+        if (filters.minBedrooms) {
+            filtered = filtered.filter(p => p.bedrooms >= filters.minBedrooms);
+        }
+
+        if (filters.minBathrooms) {
+            filtered = filtered.filter(p => p.bathrooms >= filters.minBathrooms);
+        }
+
+        return Promise.resolve({ data: filtered });
     }
 }
 

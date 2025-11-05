@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { List, BarChart, Grid3x3, Bot, Image, Mic, Mic2 } from 'lucide-react';
+import { List, BarChart, Grid3x3, Bot, Image, Mic, Mic2, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Home() {
@@ -26,6 +26,13 @@ export default function Home() {
             icon: BarChart,
             href: '/plots',
             color: 'text-green-600 dark:text-green-400'
+        },
+        {
+            name: 'Property Finder',
+            description: 'Explore real estate listings on an interactive map. Filter properties by type, price, and bedrooms.',
+            icon: MapPin,
+            href: '/map',
+            color: 'text-red-600 dark:text-red-400'
         },
         {
             name: 'AI Assistant',
