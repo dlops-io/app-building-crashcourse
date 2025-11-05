@@ -11,7 +11,7 @@ export default function Footer() {
         <footer className="footer">
             <div className="layout-container">
                 <p className="footer-text">
-                    Copyright © {new Date().getFullYear()} My Awesome App - All Rights Reserved.
+                    Copyright © {new Date().getFullYear()} AC215 Awesome App - All Rights Reserved.
                 </p>
             </div>
         </footer>

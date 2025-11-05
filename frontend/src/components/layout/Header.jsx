@@ -27,7 +27,7 @@ export default function Header() {
                     <div className="header-content">
                         <Link href="/" className="header-logo">
                             <span className="text-2xl">✨</span>
-                            <h1 className="text-xl font-bold font-montserrat">My Awesome App</h1>
+                            <h1 className="text-xl font-bold font-montserrat">AC215 Awesome App</h1>
                         </Link>
 
                         <nav className="nav-desktop">
