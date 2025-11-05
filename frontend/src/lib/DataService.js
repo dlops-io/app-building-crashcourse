@@ -218,6 +218,114 @@ const DataService = {
         // For testing, return a placeholder image
         return `https://picsum.photos/800/600?random=${encodeURIComponent(image_path)}`;
     },
+
+    // Stock Market Data Services
+    GetStockList: function () {
+        return [
+            { symbol: 'AAPL', name: 'Apple Inc.', sector: 'Technology' },
+            { symbol: 'GOOGL', name: 'Alphabet Inc.', sector: 'Technology' },
+            { symbol: 'MSFT', name: 'Microsoft Corp.', sector: 'Technology' },
+            { symbol: 'AMZN', name: 'Amazon.com Inc.', sector: 'Consumer Cyclical' },
+            { symbol: 'TSLA', name: 'Tesla Inc.', sector: 'Automotive' },
+            { symbol: 'NVDA', name: 'NVIDIA Corp.', sector: 'Technology' },
+            { symbol: 'JPM', name: 'JPMorgan Chase', sector: 'Financial' },
+            { symbol: 'V', name: 'Visa Inc.', sector: 'Financial' }
+        ];
+    },
+
+    GetStockData: async function (symbol, days = 90) {
+        await new Promise(resolve => setTimeout(resolve, 800));
+
+        const now = new Date();
+        const data = [];
+        const basePrice = Math.random() * 300 + 100;
+
+        for (let i = days; i >= 0; i--) {
+            const date = new Date(now);
+            date.setDate(date.getDate() - i);
+
+            // Skip weekends
+            if (date.getDay() === 0 || date.getDay() === 6) continue;
+
+            const trend = Math.sin(i / 10) * 20;
+            const noise = (Math.random() - 0.5) * 10;
+            const price = basePrice + trend + noise;
+
+            const volatility = Math.random() * 5;
+            const open = price + (Math.random() - 0.5) * 3;
+            const close = price + (Math.random() - 0.5) * 3;
+            const high = Math.max(open, close) + Math.random() * volatility;
+            const low = Math.min(open, close) - Math.random() * volatility;
+            const volume = Math.floor(Math.random() * 50000000 + 10000000);
+
+            data.push({
+                date: date.toISOString().split('T')[0],
+                open: parseFloat(open.toFixed(2)),
+                high: parseFloat(high.toFixed(2)),
+                low: parseFloat(low.toFixed(2)),
+                close: parseFloat(close.toFixed(2)),
+                volume: volume
+            });
+        }
+
+        return { data };
+    },
+
+    GetStockMetrics: async function (symbol) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+
+        const basePrice = Math.random() * 300 + 100;
+        const change = (Math.random() - 0.5) * 20;
+        const changePercent = (change / basePrice) * 100;
+
+        return {
+            data: {
+                symbol: symbol,
+                price: parseFloat(basePrice.toFixed(2)),
+                change: parseFloat(change.toFixed(2)),
+                changePercent: parseFloat(changePercent.toFixed(2)),
+                volume: Math.floor(Math.random() * 50000000 + 10000000),
+                marketCap: parseFloat((basePrice * (Math.random() * 1000 + 500) * 1000000).toFixed(0)),
+                high52Week: parseFloat((basePrice * 1.3).toFixed(2)),
+                low52Week: parseFloat((basePrice * 0.7).toFixed(2)),
+                pe: parseFloat((Math.random() * 30 + 10).toFixed(2)),
+                dividend: parseFloat((Math.random() * 3).toFixed(2)),
+                beta: parseFloat((Math.random() * 1.5 + 0.5).toFixed(2))
+            }
+        };
+    },
+
+    GetMovingAverages: async function (symbol) {
+        await new Promise(resolve => setTimeout(resolve, 400));
+
+        const basePrice = Math.random() * 300 + 100;
+
+        return {
+            data: {
+                sma20: parseFloat((basePrice * 0.98).toFixed(2)),
+                sma50: parseFloat((basePrice * 0.96).toFixed(2)),
+                sma200: parseFloat((basePrice * 0.92).toFixed(2)),
+                ema12: parseFloat((basePrice * 0.99).toFixed(2)),
+                ema26: parseFloat((basePrice * 0.97).toFixed(2))
+            }
+        };
+    },
+
+    GetTechnicalIndicators: async function (symbol, days = 14) {
+        await new Promise(resolve => setTimeout(resolve, 400));
+
+        return {
+            data: {
+                rsi: parseFloat((Math.random() * 60 + 20).toFixed(2)),
+                macd: parseFloat((Math.random() * 10 - 5).toFixed(2)),
+                signal: parseFloat((Math.random() * 10 - 5).toFixed(2)),
+                histogram: parseFloat((Math.random() * 5 - 2.5).toFixed(2)),
+                bollingerUpper: parseFloat((Math.random() * 50 + 150).toFixed(2)),
+                bollingerMiddle: parseFloat((Math.random() * 30 + 130).toFixed(2)),
+                bollingerLower: parseFloat((Math.random() * 30 + 110).toFixed(2))
+            }
+        };
+    }
 }
 
 export default DataService;
