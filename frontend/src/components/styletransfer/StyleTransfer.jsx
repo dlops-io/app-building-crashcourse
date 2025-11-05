@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Brush, Photo, Refresh } from '@mui/icons-material';
-import DataService from '@/services/DataService';
+import DataService from '@/lib/DataService';
 
 export default function StyleTransfer() {
     // Component States

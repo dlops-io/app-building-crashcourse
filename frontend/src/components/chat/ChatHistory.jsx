@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { ArrowForward } from '@mui/icons-material';
 import HistoryIcon from '@mui/icons-material/History';
 //import DataService from "../../services/MockDataService"; // Mock
-import DataService from "../../services/DataService";
-import { formatRelativeTime, MOCK_SERVICE } from "../../services/Common";
+import DataService from "../../lib/DataService";
+import { formatRelativeTime, MOCK_SERVICE } from "../../lib/Common";
 
 
 export default function ChatHistory({

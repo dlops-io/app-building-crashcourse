@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Mic, Stop, Warning } from '@mui/icons-material';
 import MicRecorder from 'mic-recorder-to-mp3';
-import DataService from '@/services/DataService';
+import DataService from '@/lib/DataService';
 
 // Initialize recorder outside component to persist between renders
 const recorder = new MicRecorder({

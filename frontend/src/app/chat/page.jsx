@@ -6,8 +6,8 @@ import ChatInput from '@/components/chat/ChatInput';
 import ChatHistory from '@/components/chat/ChatHistory';
 import ChatHistorySidebar from '@/components/chat/ChatHistorySidebar';
 import ChatMessage from '@/components/chat/ChatMessage';
-import DataService from "../../services/DataService";
-import { uuid } from "../../services/Common";
+import DataService from "../../lib/DataService";
+import { uuid } from "../../lib/Common";
 
 
 export default function ChatPage({ searchParams }) {

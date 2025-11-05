@@ -5,7 +5,7 @@ import {
     CloudUpload,
     CameraAlt
 } from '@mui/icons-material';
-import DataService from '@/services/DataService';
+import DataService from '@/lib/DataService';
 
 export default function ImageClassification() {
     // Component States

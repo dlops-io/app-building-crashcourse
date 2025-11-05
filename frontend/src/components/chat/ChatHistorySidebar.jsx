@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Add, History } from '@mui/icons-material';
-import DataService from "../../services/DataService";
-import { formatRelativeTime } from "../../services/Common";
+import DataService from "../../lib/DataService";
+import { formatRelativeTime } from "../../lib/Common";
 
 
 export default function ChatHistorySidebar({

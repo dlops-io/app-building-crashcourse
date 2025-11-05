@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { RecordVoiceOver, PlayArrow, History } from '@mui/icons-material';
-import DataService from '@/services/DataService';
+import DataService from '@/lib/DataService';
 
 export default function Text2Audio() {
     // Component States
