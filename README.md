@@ -56,6 +56,7 @@ The general organization of a react app is as follows.
 * Getting started with React: https://reactjs.org/docs/getting-started.html
 * Getting started with Next: https://nextjs.org/docs/app/getting-started
 * CSS: Tailwind for React: https://tailwindui.com/documentation#react-creating-components 
+* shadcn/ui: https://ui.shadcn.com/docs
 
 
 

@@ -5,6 +5,7 @@ import { User, Bot, MessageSquare, Eye } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { ScrollArea } from '@/components/ui/scroll-area';
 //import DataService from "../../services/MockDataService"; // Mock
 import DataService from "../../lib/DataService";
 
@@ -55,7 +56,8 @@ export default function ChatMessage({
                 </div>
             )}
 
-            <div ref={chatHistoryRef} className="flex-1 overflow-y-auto p-4 space-y-4">
+            <ScrollArea className="flex-1 p-4">
+                <div ref={chatHistoryRef} className="space-y-4">
                 {chat?.messages.map((msg) => (
                     <div
                         key={msg.message_id}
@@ -119,7 +121,8 @@ export default function ChatMessage({
                         </div>
                     </div>
                 )}
-            </div>
+                </div>
+            </ScrollArea>
         </div>
     );
 }

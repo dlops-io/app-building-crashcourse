@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Mic2, Play, History } from 'lucide-react';
 import DataService from '@/lib/DataService';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 
 export default function Text2Audio() {
     // Component States
@@ -37,23 +39,20 @@ export default function Text2Audio() {
                             Enter Text
                         </h3>
                         <div className="space-y-4">
-                            <textarea
+                            <Textarea
                                 value={text}
                                 onChange={(e) => setText(e.target.value)}
                                 placeholder="Type or paste your text here..."
-                                className="w-full h-40 p-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                                className="h-40 resize-none"
                             />
-                            <button
+                            <Button
                                 onClick={handleSynthesis}
                                 disabled={!text.trim() || isLoading}
-                                className={`w-full py-3 px-4 rounded-lg flex items-center justify-center gap-2 ${text.trim() && !isLoading
-                                    ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:from-purple-700 hover:to-pink-600'
-                                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                    } transition-all duration-200`}
+                                className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600"
                             >
-                                <Mic2 className="h-5 w-5" />
+                                <Mic2 className="h-5 w-5 mr-2" />
                                 {isLoading ? 'Converting...' : 'Convert to Speech'}
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </div>

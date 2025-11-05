@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
 
 export default function ChatInput({
     onSendMessage,
@@ -121,19 +122,18 @@ export default function ChatInput({
             )}
 
             <div className="relative mb-4">
-                <textarea
+                <Textarea
                     ref={textAreaRef}
-                    className="w-full bg-gray-100 border-0 rounded-lg px-4 py-3 pr-12 text-gray-800 
-                             placeholder-gray-500 focus:ring-2 focus:ring-purple-500 min-h-[24px] 
-                             max-h-[400px] resize-none overflow-hidden leading-relaxed"
+                    className="w-full min-h-[56px] max-h-[400px] pr-12 resize-none"
                     placeholder="How can AI Assistant help you today?"
                     value={message}
                     onChange={handleMessageChange}
                     onKeyDown={handleKeyPress}
                     rows={1}
                 />
-                <button
-                    className={`absolute right-2 bottom-2 p-2 rounded-full transition-all
+                <Button
+                    size="icon"
+                    className={`absolute right-2 bottom-2 rounded-full transition-all
                               ${message.trim() || selectedImage
                             ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:shadow-lg'
                             : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
@@ -141,7 +141,7 @@ export default function ChatInput({
                     disabled={!message.trim() && !selectedImage}
                 >
                     <Send className="w-5 h-5" />
-                </button>
+                </Button>
             </div>
 
             <div className="flex justify-between items-center border-t border-gray-200 pt-4">
