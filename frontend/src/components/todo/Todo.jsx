@@ -48,7 +48,7 @@ export default function Todo() {
     return (
         <div className="space-y-8">
             {/* Add Todo Section */}
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-card border rounded-lg p-6">
                 <div className="flex gap-4">
                     <Input
                         type="text"
@@ -60,7 +60,6 @@ export default function Todo() {
                     />
                     <Button
                         onClick={handleAddTodo}
-                        className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600"
                     >
                         <PlusCircle className="h-5 w-5 mr-2" />
                         Add
@@ -69,15 +68,15 @@ export default function Todo() {
             </div>
 
             {/* Todo List */}
-            <div className="bg-white rounded-lg shadow-md">
+            <div className="bg-card border rounded-lg">
                 {todos.length === 0 ? (
-                    <div className="p-8 text-center text-gray-500">
+                    <div className="p-8 text-center text-muted-foreground">
                         No todos yet. Add some tasks to get started!
                     </div>
                 ) : (
-                    <ul className="divide-y divide-gray-100">
+                    <ul className="divide-y divide-border">
                         {todos.map((todo) => (
-                            <li key={todo.id} className="p-4 hover:bg-gray-50 transition-colors">
+                            <li key={todo.id} className="p-4 hover:bg-accent/50 transition-colors">
                                 <div className="flex items-center gap-4">
                                     <Checkbox
                                         checked={todo.completed}
@@ -95,7 +94,7 @@ export default function Todo() {
                                             autoFocus
                                         />
                                     ) : (
-                                        <span className={`flex-1 ${todo.completed ? 'line-through text-gray-400' : 'text-gray-700'}`}>
+                                        <span className={`flex-1 ${todo.completed ? 'line-through text-muted-foreground' : 'text-foreground'}`}>
                                             {todo.text}
                                         </span>
                                     )}
@@ -106,7 +105,7 @@ export default function Todo() {
                                                 onClick={() => handleSaveEdit(todo.id)}
                                                 size="sm"
                                                 variant="ghost"
-                                                className="text-green-500 hover:text-green-600"
+                                                className="text-green-600 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-950"
                                             >
                                                 <Check className="h-4 w-4 mr-1" />
                                                 Save
@@ -116,7 +115,7 @@ export default function Todo() {
                                                 onClick={() => handleEdit(todo)}
                                                 size="sm"
                                                 variant="ghost"
-                                                className="text-blue-500 hover:text-blue-600"
+                                                className="text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-950"
                                             >
                                                 <Edit className="h-4 w-4" />
                                             </Button>
@@ -125,7 +124,7 @@ export default function Todo() {
                                             onClick={() => handleDelete(todo.id)}
                                             size="sm"
                                             variant="ghost"
-                                            className="text-red-500 hover:text-red-600"
+                                            className="text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-950"
                                         >
                                             <Trash2 className="h-4 w-4" />
                                         </Button>

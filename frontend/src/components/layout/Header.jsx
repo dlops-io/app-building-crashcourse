@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, Menu, X, BarChart, List, Grid3x3, Bot } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
     // Component States
@@ -42,13 +43,16 @@ export default function Header() {
                             ))}
                         </nav>
 
-                        <button
-                            className="mobile-menu-button"
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            aria-label="Toggle menu"
-                        >
-                            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                        </button>
+                        <div className="flex items-center gap-2">
+                            <ThemeToggle />
+                            <button
+                                className="mobile-menu-button"
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                aria-label="Toggle menu"
+                            >
+                                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                            </button>
+                        </div>
                     </div>
                 </div>
 

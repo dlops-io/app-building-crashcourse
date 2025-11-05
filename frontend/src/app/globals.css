@@ -1,4 +1,4 @@
-/* globals.css */
+/* Modern Minimalist Design System */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,66 +10,98 @@
     }
 
     body {
-        @apply antialiased bg-gray-50;
-        font-family: 'Source Sans Pro', sans-serif;
+        @apply antialiased;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: 'Playfair Display', serif;
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold tracking-tight;
     }
-  :root {
+
+    /* Modern Design Tokens - Light Mode */
+    :root {
+        /* Neutral palette - crisp and clean */
         --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
+        --foreground: 222 47% 11%;
+
+        /* Card system */
         --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
-        --destructive: 0 84.2% 60.2%;
+        --card-foreground: 222 47% 11%;
+
+        /* Muted backgrounds */
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+
+        /* Borders - subtle but visible */
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+
+        /* Primary accent - modern purple */
+        --primary: 262 83% 58%;
+        --primary-foreground: 0 0% 100%;
+
+        /* Secondary - neutral */
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222 47% 11%;
+
+        /* Accent - subtle highlight */
+        --accent: 210 40% 96%;
+        --accent-foreground: 222 47% 11%;
+
+        /* Destructive */
+        --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 10% 3.9%;
-        --chart-1: 12 76% 61%;
+
+        /* Focus ring */
+        --ring: 262 83% 58%;
+
+        /* Popover */
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+
+        /* Chart colors */
+        --chart-1: 262 83% 58%;
         --chart-2: 173 58% 39%;
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
+
+        /* Border radius - crisp edges */
         --radius: 0.5rem;
     }
-  .dark {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
-        --chart-1: 220 70% 50%;
+
+    /* Dark Mode - Modern and sophisticated */
+    .dark {
+        --background: 222 47% 11%;
+        --foreground: 210 40% 98%;
+
+        --card: 222 47% 11%;
+        --card-foreground: 210 40% 98%;
+
+        --muted: 217 33% 17%;
+        --muted-foreground: 215 20% 65%;
+
+        --border: 217 33% 17%;
+        --input: 217 33% 17%;
+
+        --primary: 263 70% 65%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 217 33% 17%;
+        --secondary-foreground: 210 40% 98%;
+
+        --accent: 217 33% 17%;
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 63% 31%;
+        --destructive-foreground: 210 40% 98%;
+
+        --ring: 263 70% 65%;
+
+        --popover: 222 47% 11%;
+        --popover-foreground: 210 40% 98%;
+
+        --chart-1: 263 70% 65%;
         --chart-2: 160 60% 45%;
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
@@ -77,24 +109,24 @@
     }
 }
 
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
 @layer components {
-
-    /* Layout Components */
-    .layout-container {
-        @apply container mx-auto px-4;
-    }
-
-    .page-wrapper {
-        @apply flex flex-col min-h-screen;
-    }
-
-    /* Header Styles */
+    /* Header - Clean and minimal */
     .header-wrapper {
-        @apply fixed w-full top-0 z-50;
+        @apply fixed w-full top-0 z-50 border-b bg-background/80 backdrop-blur-md;
     }
 
     .header-container {
-        @apply bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 shadow-lg;
+        @apply bg-background;
     }
 
     .header-content {
@@ -102,169 +134,119 @@
     }
 
     .header-logo {
-        @apply text-white hover:text-white/90 transition-colors flex items-center gap-2;
+        @apply text-foreground hover:text-primary transition-colors flex items-center gap-2;
     }
 
     .nav-desktop {
-        @apply hidden md:flex items-center gap-6;
+        @apply hidden md:flex items-center gap-1;
     }
 
     .nav-link {
-        @apply flex items-center gap-2 text-white/90 hover:text-white transition-colors;
+        @apply flex items-center gap-2 px-3 py-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-all;
     }
 
     .nav-link-active {
-        @apply font-semibold;
+        @apply bg-accent text-foreground font-medium;
     }
 
     .nav-icon-wrapper {
-        @apply flex items-center justify-center w-5 h-5;
+        @apply flex items-center justify-center;
     }
 
     .nav-text {
-        @apply leading-none pt-0.5;
+        @apply text-sm;
     }
 
     /* Mobile Menu */
     .mobile-menu-button {
-        @apply md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors;
+        @apply md:hidden p-2 hover:bg-accent rounded-md transition-colors;
     }
 
     .mobile-menu {
-        @apply absolute top-16 left-0 right-0 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 md:hidden shadow-lg transform transition-transform duration-300 ease-in-out;
+        @apply absolute top-16 left-0 right-0 bg-background md:hidden border-b transform transition-transform duration-300 ease-in-out;
     }
 
     .mobile-menu-overlay {
-        @apply fixed inset-0 bg-black/50 md:hidden z-40;
+        @apply fixed inset-0 bg-black/20 md:hidden z-40;
     }
 
-    /* Hero Section */
-    .hero-section {
-        @apply pt-24 md:pt-32 pb-12 px-4 bg-gradient-to-br from-purple-100 via-pink-50 to-orange-50;
+    /* Page Sections */
+    .content-section {
+        @apply container mx-auto px-4 py-8;
     }
 
-    .hero-content {
-        @apply container mx-auto max-w-4xl text-center;
-    }
-
-    .hero-title {
-        @apply text-4xl md:text-6xl font-bold gradient-text mb-6 font-montserrat;
-    }
-
-    .hero-description {
-        @apply text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8;
-    }
-
-    /* Buttons */
-    .button-primary {
-        @apply px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow;
-    }
-
-    .button-secondary {
-        @apply px-8 py-3 bg-white text-purple-600 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow;
-    }
-
-    /* Cards */
+    /* Cards - Crisp borders, subtle shadows */
     .feature-card {
-        @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow cursor-pointer;
+        @apply bg-card border rounded-lg p-6 hover:border-primary/50 transition-all;
     }
 
     .feature-card-title {
-        @apply text-xl font-semibold mb-4 font-montserrat;
+        @apply text-xl font-semibold mb-2;
     }
 
     .feature-card-description {
-        @apply text-gray-600;
+        @apply text-muted-foreground text-sm;
     }
 
-    /* Content Sections */
-    .content-section {
-        @apply container mx-auto px-4 py-12;
+    /* Buttons - Modern and clean */
+    .button-primary {
+        @apply px-6 py-2.5 bg-primary text-primary-foreground rounded-md font-medium shadow-sm hover:bg-primary/90 transition-all;
     }
 
-    .content-grid {
-        @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+    .button-secondary {
+        @apply px-6 py-2.5 bg-secondary text-secondary-foreground rounded-md font-medium border hover:bg-accent transition-all;
     }
 
-    /* Footer */
+    /* Footer - Minimal */
     .footer {
-        @apply w-full bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 py-6 mt-auto;
+        @apply w-full border-t py-6 mt-auto bg-background;
     }
 
     .footer-text {
-        @apply text-center text-white/90 text-sm;
+        @apply text-center text-muted-foreground text-sm;
     }
 
-}
-
-@layer components {
-
-    /* Chat Layout */
+    /* Chat Layout - Clean and organized */
     .chat-container {
-        @apply flex flex-col h-screen overflow-hidden bg-gray-50;
+        @apply flex flex-col h-screen overflow-hidden;
     }
 
     .chat-main {
         @apply flex-1 flex overflow-hidden;
     }
 
-    /* Chat Sidebar */
     .chat-sidebar {
-        @apply w-80 bg-gray-50 border-r border-gray-200 flex flex-col;
+        @apply w-80 border-r flex flex-col bg-background;
     }
 
-    .chat-sidebar-header {
-        @apply flex items-center justify-between p-4 border-b border-gray-200;
-    }
-
-    /* Chat Messages Area */
     .chat-messages {
-        @apply flex-1 flex flex-col overflow-hidden bg-gray-50;
+        @apply flex-1 flex flex-col overflow-hidden bg-muted/30;
     }
 
     .chat-messages-header {
-        @apply bg-white border-b border-gray-200 p-4 flex items-center gap-3;
-    }
-
-    .chat-messages-container {
-        @apply flex-1 overflow-y-auto p-4 space-y-6;
+        @apply bg-card border-b px-6 py-4 flex items-center gap-3;
     }
 
     .chat-message {
-        @apply flex items-start gap-3 max-w-3xl mx-4;
+        @apply flex items-start gap-3 max-w-3xl;
     }
 
     .chat-message-user {
-        @apply ml-auto bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-2xl p-4;
+        @apply ml-auto flex-row-reverse;
     }
 
     .chat-message-assistant {
-        @apply mr-auto bg-white shadow-md rounded-2xl p-4;
+        @apply mr-auto;
     }
 
     /* Chat Input Area */
     .chat-input-area {
-        @apply border-t border-gray-200 bg-white p-4;
+        @apply border-t bg-background px-6 py-4;
     }
 }
 
 @layer utilities {
     .gradient-text {
-        @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400;
-    }
-
-    .gradient-bg {
-        @apply bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400;
-    }
-}
-
-
-
-@layer base {
-  * {
-    @apply border-border;
-    }
-  body {
-    @apply bg-background text-foreground;
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60;
     }
 }

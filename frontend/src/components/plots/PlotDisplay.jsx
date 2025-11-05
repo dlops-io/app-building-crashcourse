@@ -9,7 +9,7 @@ const Plot = dynamic(() => import('react-plotly.js'), {
     ssr: false,
     loading: () => (
         <div className="flex justify-center p-8">
-            <Loader2 className="h-8 w-8 animate-spin text-purple-500" />
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </div>
     )
 });
@@ -81,8 +81,8 @@ export default function PlotDisplay() {
             {/* Basic Charts Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Simple Line and Bar Chart */}
-                <div className="bg-white rounded-lg shadow-md p-4">
-                    <h3 className="text-lg font-semibold mb-4">Basic Analytics</h3>
+                <div className="bg-card border rounded-lg p-4">
+                    <h3 className="text-lg font-semibold mb-4 text-foreground">Basic Analytics</h3>
                     <Plot
                         data={[
                             {
@@ -109,8 +109,8 @@ export default function PlotDisplay() {
                 </div>
 
                 {/* Candlestick Chart */}
-                <div className="bg-white rounded-lg shadow-md p-4">
-                    <h3 className="text-lg font-semibold mb-4">Stock Performance</h3>
+                <div className="bg-card border rounded-lg p-4">
+                    <h3 className="text-lg font-semibold mb-4 text-foreground">Stock Performance</h3>
                     <Plot
                         data={[sampleTrace]}
                         layout={{
@@ -124,11 +124,11 @@ export default function PlotDisplay() {
             </div>
 
             {/* Full Width Chart */}
-            <div className="bg-white rounded-lg shadow-md p-4">
-                <h3 className="text-lg font-semibold mb-4">Historical Data</h3>
+            <div className="bg-card border rounded-lg p-4">
+                <h3 className="text-lg font-semibold mb-4 text-foreground">Historical Data</h3>
                 {isLoading ? (
                     <div className="flex justify-center p-8">
-                        <Loader2 className="h-8 w-8 animate-spin text-purple-500" />
+                        <Loader2 className="h-8 w-8 animate-spin text-primary" />
                     </div>
                 ) : stockData.length > 0 ? (
                     <Plot
@@ -141,7 +141,7 @@ export default function PlotDisplay() {
                         className="w-full"
                     />
                 ) : (
-                    <div className="text-center text-gray-500 py-8">
+                    <div className="text-center text-muted-foreground py-8">
                         No data available
                     </div>
                 )}
