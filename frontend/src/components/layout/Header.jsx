@@ -14,8 +14,8 @@ export default function Header() {
     const navItems = [
         { name: 'Home', path: '/', icon: <Home className="h-5 w-5" /> },
         { name: 'Todo', path: '/todo', icon: <List className="h-5 w-5" /> },
-        { name: 'Plots', path: '/plots', icon: <BarChart className="h-5 w-5" /> },
         { name: 'Grids', path: '/styletransfer', icon: <Grid3x3 className="h-5 w-5" /> },
+        { name: 'Plots', path: '/plots', icon: <BarChart className="h-5 w-5" /> },
         { name: 'AI Assistant', path: '/chat', icon: <Bot className="h-5 w-5" /> }
     ];
 

@@ -8,10 +8,10 @@ export default function TextToAudioPage() {
             <div className="container mx-auto max-w-6xl">
                 {/* Header */}
                 <div className="mb-8">
-                    <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 font-montserrat">
+                    <h1 className="text-3xl md:text-4xl font-bold gradient-text font-montserrat">
                         Text to Speech
                     </h1>
-                    <p className="text-gray-600 mt-2">
+                    <p className="text-muted-foreground mt-2">
                         Convert your text into natural-sounding speech
                     </p>
                 </div>

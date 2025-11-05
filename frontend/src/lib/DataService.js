@@ -114,7 +114,7 @@ const DataService = {
 
     Text2AudioGetAudio: function (audioPath) {
         // For testing, return a sample audio URL
-        return 'https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav';
+        return 'https://storage.googleapis.com/ac215-public-bucket/input-02.mp3';
     },
 
     StyleTransferGetContentImages: async function () {

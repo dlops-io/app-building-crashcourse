@@ -4,8 +4,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 export const metadata = {
-    title: 'My Awesome App',
-    description: 'An awesome description here',
+    title: 'AC215 Awesome App',
+    description: 'Sample app components for AC215',
 }
 
 export default function RootLayout({ children }) {

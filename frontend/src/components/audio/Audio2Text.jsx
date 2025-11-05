@@ -70,7 +70,7 @@ export default function Audio2Text() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Recording Section */}
             <div className="md:col-span-4">
-                <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <div className="bg-card border border-border rounded-lg shadow-lg overflow-hidden">
                     {/* Audio Player */}
                     <div className="p-6 flex justify-center">
                         {blobURL ? (
@@ -80,14 +80,14 @@ export default function Audio2Text() {
                                 className="w-full"
                             />
                         ) : (
-                            <div className="text-gray-400 text-center py-4">
+                            <div className="text-muted-foreground text-center py-4">
                                 No recording yet
                             </div>
                         )}
                     </div>
 
                     {/* Recording Controls */}
-                    <div className="border-t border-gray-800 p-6">
+                    <div className="border-t border-border p-6">
                         {isBlocked ? (
                             <div className="flex items-center justify-center text-yellow-500 gap-2">
                                 <AlertTriangle className="h-5 w-5" />
@@ -99,13 +99,13 @@ export default function Audio2Text() {
                                     onClick={isRecording ? handleStopRecording : handleStartRecording}
                                     className={`p-4 rounded-full transition-all ${isRecording
                                         ? 'bg-red-500 hover:bg-red-600'
-                                        : 'bg-purple-500 hover:bg-purple-600'
+                                        : 'bg-primary hover:bg-primary/90'
                                         }`}
                                 >
                                     {isRecording ? (
                                         <Square className="w-8 h-8 text-white" />
                                     ) : (
-                                        <Mic className="w-8 h-8 text-white" />
+                                        <Mic className="w-8 h-8 text-primary-foreground" />
                                     )}
                                 </button>
                             </div>
@@ -116,38 +116,38 @@ export default function Audio2Text() {
 
             {/* Transcription Results */}
             <div className="md:col-span-8">
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div className="px-6 py-4 border-b border-gray-200">
-                        <h3 className="text-lg font-semibold text-gray-800">
+                <div className="bg-card border border-border rounded-lg shadow-lg overflow-hidden">
+                    <div className="px-6 py-4 border-b border-border">
+                        <h3 className="text-lg font-semibold text-foreground">
                             Transcription Results
                         </h3>
                     </div>
 
                     {isLoading ? (
                         <div className="p-8 text-center">
-                            <div className="animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent mx-auto"></div>
-                            <p className="mt-4 text-gray-600">Processing audio...</p>
+                            <div className="animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent mx-auto"></div>
+                            <p className="mt-4 text-muted-foreground">Processing audio...</p>
                         </div>
                     ) : transcriptionResults.length > 0 ? (
                         <div className="overflow-x-auto">
                             <table className="w-full">
-                                <thead className="bg-gray-50">
+                                <thead className="bg-muted">
                                     <tr>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                                             Transcription
                                         </th>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                                             Confidence
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody className="bg-white divide-y divide-gray-200">
+                                <tbody className="bg-card divide-y divide-border">
                                     {transcriptionResults.map((item, idx) => (
-                                        <tr key={idx}>
-                                            <td className="px-6 py-4 whitespace-pre-wrap text-sm text-gray-900">
+                                        <tr key={idx} className="hover:bg-muted/50 transition-colors">
+                                            <td className="px-6 py-4 whitespace-pre-wrap text-sm text-foreground">
                                                 {item.transcript}
                                             </td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">
                                                 {(item.confidence * 100).toFixed(1)}%
                                             </td>
                                         </tr>
@@ -156,7 +156,7 @@ export default function Audio2Text() {
                             </table>
                         </div>
                     ) : (
-                        <div className="p-8 text-center text-gray-500">
+                        <div className="p-8 text-center text-muted-foreground">
                             No transcriptions yet. Record some audio to get started!
                         </div>
                     )}

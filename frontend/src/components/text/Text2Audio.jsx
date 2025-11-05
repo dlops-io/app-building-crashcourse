@@ -33,9 +33,9 @@ export default function Text2Audio() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Input Section */}
             <div className="md:col-span-5">
-                <div className="bg-white rounded-lg shadow-lg">
+                <div className="bg-card border border-border rounded-lg shadow-lg">
                     <div className="p-6">
-                        <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                        <h3 className="text-lg font-semibold text-foreground mb-4">
                             Enter Text
                         </h3>
                         <div className="space-y-4">
@@ -48,7 +48,7 @@ export default function Text2Audio() {
                             <Button
                                 onClick={handleSynthesis}
                                 disabled={!text.trim() || isLoading}
-                                className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600"
+                                className="w-full"
                             >
                                 <Mic2 className="h-5 w-5 mr-2" />
                                 {isLoading ? 'Converting...' : 'Convert to Speech'}
@@ -60,21 +60,21 @@ export default function Text2Audio() {
 
             {/* Output Section */}
             <div className="md:col-span-7">
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
-                            <History className="text-purple-500 h-5 w-5" />
+                <div className="bg-card border border-border rounded-lg shadow-lg overflow-hidden">
+                    <div className="px-6 py-4 border-b border-border flex items-center justify-between">
+                        <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                            <History className="text-primary h-5 w-5" />
                             Generated Audio
                         </h3>
                     </div>
 
                     {outputs.length > 0 ? (
-                        <div className="divide-y divide-gray-100">
+                        <div className="divide-y divide-border">
                             {outputs.map((output, idx) => (
-                                <div key={idx} className="p-4 hover:bg-gray-50 transition-colors">
+                                <div key={idx} className="p-4 hover:bg-muted/50 transition-colors">
                                     <div className="flex items-start gap-4">
                                         <div className="flex-grow">
-                                            <p className="text-gray-600 text-sm mb-2">
+                                            <p className="text-muted-foreground text-sm mb-2">
                                                 {output.text}
                                             </p>
                                             <audio
@@ -86,7 +86,7 @@ export default function Text2Audio() {
                                             </audio>
                                         </div>
                                         <button
-                                            className="p-2 text-purple-500 hover:bg-purple-50 rounded-full transition-colors"
+                                            className="p-2 text-primary hover:bg-accent rounded-full transition-colors"
                                             title="Play Audio"
                                         >
                                             <Play className="h-5 w-5" />
@@ -96,7 +96,7 @@ export default function Text2Audio() {
                             ))}
                         </div>
                     ) : (
-                        <div className="p-8 text-center text-gray-500">
+                        <div className="p-8 text-center text-muted-foreground">
                             No audio generated yet. Enter some text to get started!
                         </div>
                     )}

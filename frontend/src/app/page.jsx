@@ -14,18 +14,18 @@ export default function Home() {
             color: 'text-blue-600 dark:text-blue-400'
         },
         {
-            name: 'Data Visualization',
-            description: 'Create beautiful interactive charts and plots. Visualize your data with powerful plotting tools.',
-            icon: BarChart,
-            href: '/plots',
-            color: 'text-green-600 dark:text-green-400'
-        },
-        {
             name: 'Style Transfer',
             description: 'Transform your images with AI-powered style transfer. Apply artistic styles to your photos.',
             icon: Grid3x3,
             href: '/styletransfer',
             color: 'text-purple-600 dark:text-purple-400'
+        },
+        {
+            name: 'Data Visualization',
+            description: 'Create beautiful interactive charts and plots. Visualize your data with powerful plotting tools.',
+            icon: BarChart,
+            href: '/plots',
+            color: 'text-green-600 dark:text-green-400'
         },
         {
             name: 'AI Assistant',
