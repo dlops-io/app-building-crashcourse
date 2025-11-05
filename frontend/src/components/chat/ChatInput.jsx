@@ -103,7 +103,7 @@ export default function ChatInput({
 
     // UI View
     return (
-        <div className="bg-white/80 backdrop-blur-lg rounded-xl shadow-lg p-6">
+        <div className="bg-card/80 backdrop-blur-lg rounded-xl shadow-lg p-6 border border-border">
             {selectedImage && (
                 <div className="relative inline-block mb-4">
                     <img
@@ -113,8 +113,8 @@ export default function ChatInput({
                     />
                     <button
                         onClick={removeImage}
-                        className="absolute -top-2 -right-2 w-6 h-6 bg-gray-800 text-white rounded-full 
-                                 flex items-center justify-center hover:bg-gray-700 transition-colors"
+                        className="absolute -top-2 -right-2 w-6 h-6 bg-foreground text-background rounded-full
+                                 flex items-center justify-center hover:bg-foreground/80 transition-colors"
                     >
                         ×
                     </button>
@@ -135,8 +135,8 @@ export default function ChatInput({
                     size="icon"
                     className={`absolute right-2 bottom-2 rounded-full transition-all
                               ${message.trim() || selectedImage
-                            ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:shadow-lg'
-                            : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+                            ? 'bg-primary text-primary-foreground hover:shadow-lg'
+                            : 'opacity-50 cursor-not-allowed'}`}
                     onClick={handleSubmit}
                     disabled={!message.trim() && !selectedImage}
                 >
@@ -144,7 +144,7 @@ export default function ChatInput({
                 </Button>
             </div>
 
-            <div className="flex justify-between items-center border-t border-gray-200 pt-4">
+            <div className="flex justify-between items-center border-t border-border pt-4">
                 <div className="flex items-center gap-2">
                     <input
                         type="file"
@@ -157,19 +157,19 @@ export default function ChatInput({
                         onClick={handleImageClick}
                         variant="ghost"
                         size="icon"
-                        className="text-gray-600 hover:bg-gray-100"
+                        className="text-muted-foreground hover:bg-accent"
                     >
                         <Camera className="h-5 w-5" />
                     </Button>
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-muted-foreground">
                         Use shift + return for new line
                     </span>
                     <select
-                        className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm
-                                 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="px-4 py-2 bg-background border border-border rounded-lg text-sm text-foreground
+                                 focus:ring-2 focus:ring-ring focus:border-transparent"
                         value={selectedModel}
                         onChange={handleModelChange}
                         disabled={disableModelSelect}

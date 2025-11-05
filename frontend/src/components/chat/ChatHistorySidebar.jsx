@@ -32,16 +32,16 @@ export default function ChatHistorySidebar({
 
     // UI View
     return (
-        <div className="flex flex-col h-full bg-white border-r border-gray-200">
-            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">
-                <h2 className="text-white/90 text-lg flex items-center gap-2">
-                    <History className="w-5 h-5" />
+        <div className="flex flex-col h-full bg-card border-r border-border">
+            <div className="flex items-center justify-between p-4 bg-muted border-b border-border">
+                <h2 className="text-foreground text-lg flex items-center gap-2">
+                    <History className="text-primary w-5 h-5" />
                     Chat History
                 </h2>
                 <button
                     onClick={() => router.push(`/chat?model=${model}`)}
-                    className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 
-                        text-white rounded-lg transition-colors"
+                    className="flex items-center gap-1 px-3 py-1.5 bg-primary text-primary-foreground hover:bg-primary/90
+                        rounded-lg transition-colors text-sm"
                 >
                     <Plus className="w-4 h-4" />
                     New Chat
@@ -53,14 +53,14 @@ export default function ChatHistorySidebar({
                     <div
                         key={chat.chat_id}
                         onClick={() => router.push(`/chat?model=${model}&id=${chat.chat_id}`)}
-                        className={`p-4 border-b border-gray-200 cursor-pointer hover:bg-gray-50
-                          transition-colors ${chat_id === chat.chat_id ? 'bg-purple-50' : ''}`}
+                        className={`p-4 border-b border-border cursor-pointer hover:bg-muted/50
+                          transition-colors ${chat_id === chat.chat_id ? 'bg-accent' : ''}`}
                     >
                         <div className="flex flex-col gap-1">
-                            <span className="text-gray-800 text-sm line-clamp-2">
+                            <span className="text-foreground text-sm line-clamp-2">
                                 {chat.title}
                             </span>
-                            <span className="text-gray-500 text-xs">
+                            <span className="text-muted-foreground text-xs">
                                 {formatRelativeTime(chat.dts)}
                             </span>
                         </div>

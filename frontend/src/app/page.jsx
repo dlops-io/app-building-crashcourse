@@ -64,7 +64,7 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto text-center">
                     <h1 className="text-5xl sm:text-6xl font-bold tracking-tight mb-6">
                         Welcome to{' '}
-                        <span className="text-primary">My Awesome App</span>
+                        <span className="text-primary">AC215 Awesome App</span>
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
                         Your all-in-one platform for productivity, AI tools, and creative applications.

@@ -50,9 +50,9 @@ export default function ChatMessage({
     return (
         <div className="flex flex-col h-full overflow-hidden">
             {chat && (
-                <div className="flex items-center gap-3 p-4 border-b border-gray-200 bg-white">
-                    <MessageSquare className="text-purple-600 h-5 w-5" />
-                    <h1 className="text-gray-800 font-medium">{chat.title}</h1>
+                <div className="flex items-center gap-3 p-4 border-b border-border bg-card">
+                    <MessageSquare className="text-primary h-5 w-5" />
+                    <h1 className="text-foreground font-medium">{chat.title}</h1>
                 </div>
             )}
 
@@ -63,17 +63,17 @@ export default function ChatMessage({
                         key={msg.message_id}
                         className={`chat-message ${msg.role === 'user' ? 'chat-message-user' : 'chat-message-assistant'}`}
                     >
-                        <div className={`p-2 rounded-full ${msg.role === 'assistant' ? 'bg-purple-100' :
-                            msg.role === 'cnn' ? 'bg-pink-100' : 'bg-gray-100'
+                        <div className={`p-2 rounded-full ${msg.role === 'assistant' ? 'bg-primary/10' :
+                            msg.role === 'cnn' ? 'bg-pink-500/10 dark:bg-pink-400/10' : 'bg-muted'
                             }`}>
-                            {msg.role === 'assistant' && <Bot className="text-purple-600 h-5 w-5" />}
-                            {msg.role === 'cnn' && <Eye className="text-pink-600 h-5 w-5" />}
-                            {msg.role === 'user' && <User className="text-gray-600 h-5 w-5" />}
+                            {msg.role === 'assistant' && <Bot className="text-primary h-5 w-5" />}
+                            {msg.role === 'cnn' && <Eye className="text-pink-600 dark:text-pink-400 h-5 w-5" />}
+                            {msg.role === 'user' && <User className="text-muted-foreground h-5 w-5" />}
                         </div>
 
                         <div className={`rounded-2xl p-4 shadow-sm ${msg.role === 'user'
-                            ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white'
-                            : 'bg-white text-gray-800'
+                            ? 'bg-primary text-primary-foreground'
+                            : 'bg-card text-foreground border border-border'
                             }`}>
                             {msg.image && (
                                 <img src={msg.image} alt="Chat" className="max-w-md rounded-lg mb-2" />
@@ -86,7 +86,7 @@ export default function ChatMessage({
                                 />
                             )}
 
-                            <div className={`prose ${msg.role === 'user' ? 'prose-invert' : ''} max-w-none`}>
+                            <div className={`prose ${msg.role === 'user' ? 'prose-invert' : 'dark:prose-invert'} max-w-none`}>
                                 <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
                                     {msg.content}
                                 </ReactMarkdown>
@@ -114,7 +114,7 @@ export default function ChatMessage({
                             {[...Array(3)].map((_, i) => (
                                 <div
                                     key={i}
-                                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                                    className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"
                                     style={{ animationDelay: `${i * 0.2}s` }}
                                 />
                             ))}

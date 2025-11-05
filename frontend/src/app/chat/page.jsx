@@ -144,18 +144,18 @@ export default function ChatPage({ searchParams }) {
     };
 
     return (
-        <div className="h-screen flex flex-col pt-16">
+        <div className="h-screen flex flex-col">
             {!hasActiveChat ? (
                 <>
                     {/* Hero Section */}
-                    <section className="flex-shrink-0 min-h-[400px] flex items-center justify-center bg-gradient-to-br from-purple-100 via-pink-50 to-orange-50">
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-pink-500/10 to-orange-400/10" />
+                    <section className="flex-shrink-0 min-h-[400px] flex items-center justify-center bg-gradient-to-br from-primary/10 via-primary/5 to-accent">
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent" />
                         <div className="container mx-auto px-4 max-w-3xl relative z-10 pt-20">
                             <div className="text-center">
                                 <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
                                     AI Assistant 🌟
                                 </h1>
-                                <div className="bg-white/80 backdrop-blur-lg rounded-xl shadow-lg p-6">
+                                <div className="bg-card/80 backdrop-blur-lg rounded-xl shadow-lg p-6 border border-border">
                                     <ChatInput
                                         onSendMessage={newChat}
                                         selectedModel={selectedModel}
@@ -174,7 +174,7 @@ export default function ChatPage({ searchParams }) {
             ) : (
                 <div className="flex h-[calc(100vh-64px)]">
                     {/* Sidebar */}
-                    <div className="w-80 flex-shrink-0 bg-white border-r border-gray-200">
+                    <div className="w-80 flex-shrink-0 bg-card border-r border-border">
                         <ChatHistorySidebar chat_id={chat_id} model={model} />
                     </div>
 
@@ -188,7 +188,7 @@ export default function ChatPage({ searchParams }) {
                                 model={model}
                             />
                         </div>
-                        <div className="flex-shrink-0 border-t border-gray-200 bg-white">
+                        <div className="flex-shrink-0 border-t border-border bg-card">
                             <ChatInput
                                 onSendMessage={appendChat}
                                 chat={chat}
