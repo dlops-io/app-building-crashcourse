@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { RecordVoiceOver, PlayArrow, History } from '@mui/icons-material';
+import { Mic2, Play, History } from 'lucide-react';
 import DataService from '@/lib/DataService';
 
 export default function Text2Audio() {
@@ -51,7 +51,7 @@ export default function Text2Audio() {
                                     : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                     } transition-all duration-200`}
                             >
-                                <RecordVoiceOver />
+                                <Mic2 className="h-5 w-5" />
                                 {isLoading ? 'Converting...' : 'Convert to Speech'}
                             </button>
                         </div>
@@ -64,7 +64,7 @@ export default function Text2Audio() {
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
                         <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
-                            <History className="text-purple-500" />
+                            <History className="text-purple-500 h-5 w-5" />
                             Generated Audio
                         </h3>
                     </div>
@@ -90,7 +90,7 @@ export default function Text2Audio() {
                                             className="p-2 text-purple-500 hover:bg-purple-50 rounded-full transition-colors"
                                             title="Play Audio"
                                         >
-                                            <PlayArrow />
+                                            <Play className="h-5 w-5" />
                                         </button>
                                     </div>
                                 </div>

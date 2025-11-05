@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Send, CameraAltOutlined } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
+import { Send, Camera } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function ChatInput({
     onSendMessage,
@@ -153,12 +153,14 @@ export default function ChatInput({
                         accept="image/*"
                         onChange={handleImageChange}
                     />
-                    <IconButton
+                    <Button
                         onClick={handleImageClick}
-                        className="text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                        variant="ghost"
+                        size="icon"
+                        className="text-gray-600 hover:bg-gray-100"
                     >
-                        <CameraAltOutlined />
-                    </IconButton>
+                        <Camera className="h-5 w-5" />
+                    </Button>
                 </div>
 
                 <div className="flex items-center gap-4">

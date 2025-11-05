@@ -1,10 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react';
-import {
-    CloudUpload,
-    CameraAlt
-} from '@mui/icons-material';
+import { CloudUpload, Camera } from 'lucide-react';
 import DataService from '@/lib/DataService';
 
 export default function ImageClassification() {
@@ -123,7 +120,7 @@ export default function ImageClassification() {
                                 </p>
                             </div>
                             <button className="mt-4 flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors">
-                                <CameraAlt className="w-5 h-5" />
+                                <Camera className="w-5 h-5" />
                                 Take Photo
                             </button>
                         </div>

@@ -2,12 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { CircularProgress } from '@mui/material';
+import { Loader2 } from 'lucide-react';
 
 // Dynamically import Plot with no SSR(Server Side Rendering)
 const Plot = dynamic(() => import('react-plotly.js'), {
     ssr: false,
-    loading: () => <div className="flex justify-center p-8"><CircularProgress /></div>
+    loading: () => (
+        <div className="flex justify-center p-8">
+            <Loader2 className="h-8 w-8 animate-spin text-purple-500" />
+        </div>
+    )
 });
 
 export default function PlotDisplay() {
@@ -124,7 +128,7 @@ export default function PlotDisplay() {
                 <h3 className="text-lg font-semibold mb-4">Historical Data</h3>
                 {isLoading ? (
                     <div className="flex justify-center p-8">
-                        <CircularProgress />
+                        <Loader2 className="h-8 w-8 animate-spin text-purple-500" />
                     </div>
                 ) : stockData.length > 0 ? (
                     <Plot

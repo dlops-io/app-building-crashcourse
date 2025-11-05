@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { Mic, Stop, Warning } from '@mui/icons-material';
+import { Mic, Square, AlertTriangle } from 'lucide-react';
 import MicRecorder from 'mic-recorder-to-mp3';
 import DataService from '@/lib/DataService';
 
@@ -90,7 +90,7 @@ export default function Audio2Text() {
                     <div className="border-t border-gray-800 p-6">
                         {isBlocked ? (
                             <div className="flex items-center justify-center text-yellow-500 gap-2">
-                                <Warning />
+                                <AlertTriangle className="h-5 w-5" />
                                 <span>Microphone access denied</span>
                             </div>
                         ) : (
@@ -103,7 +103,7 @@ export default function Audio2Text() {
                                         }`}
                                 >
                                     {isRecording ? (
-                                        <Stop className="w-8 h-8 text-white" />
+                                        <Square className="w-8 h-8 text-white" />
                                     ) : (
                                         <Mic className="w-8 h-8 text-white" />
                                     )}

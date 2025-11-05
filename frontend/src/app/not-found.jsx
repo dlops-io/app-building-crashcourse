@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { Home as HomeIcon, ArrowBack } from '@mui/icons-material';
+import { Home as HomeIcon, ArrowLeft } from 'lucide-react';
 
 export default function NotFound() {
     // Optional: Track 404s
@@ -41,7 +41,7 @@ export default function NotFound() {
                         onClick={() => window.history.back()}
                         className="button-secondary inline-flex items-center justify-center gap-2 group"
                     >
-                        <ArrowBack className="w-5 h-5 group-hover:translate-x-[-4px] transition-transform" />
+                        <ArrowLeft className="w-5 h-5 group-hover:translate-x-[-4px] transition-transform" />
                         Go Back
                     </button>
                 </div>

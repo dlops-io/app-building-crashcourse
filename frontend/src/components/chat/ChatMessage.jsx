@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Person, SmartToy, Forum, RemoveRedEye } from '@mui/icons-material';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import { User, Bot, MessageSquare, Eye } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -51,7 +50,7 @@ export default function ChatMessage({
         <div className="flex flex-col h-full overflow-hidden">
             {chat && (
                 <div className="flex items-center gap-3 p-4 border-b border-gray-200 bg-white">
-                    <Forum className="text-purple-600" />
+                    <MessageSquare className="text-purple-600 h-5 w-5" />
                     <h1 className="text-gray-800 font-medium">{chat.title}</h1>
                 </div>
             )}
@@ -65,9 +64,9 @@ export default function ChatMessage({
                         <div className={`p-2 rounded-full ${msg.role === 'assistant' ? 'bg-purple-100' :
                             msg.role === 'cnn' ? 'bg-pink-100' : 'bg-gray-100'
                             }`}>
-                            {msg.role === 'assistant' && <SmartToy className="text-purple-600" />}
-                            {msg.role === 'cnn' && <RemoveRedEye className="text-pink-600" />}
-                            {msg.role === 'user' && <Person className="text-gray-600" />}
+                            {msg.role === 'assistant' && <Bot className="text-purple-600 h-5 w-5" />}
+                            {msg.role === 'cnn' && <Eye className="text-pink-600 h-5 w-5" />}
+                            {msg.role === 'user' && <User className="text-gray-600 h-5 w-5" />}
                         </div>
 
                         <div className={`rounded-2xl p-4 shadow-sm ${msg.role === 'user'

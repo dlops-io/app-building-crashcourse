@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowForward } from '@mui/icons-material';
-import HistoryIcon from '@mui/icons-material/History';
+import { ArrowRight, History } from 'lucide-react';
 //import DataService from "../../services/MockDataService"; // Mock
 import DataService from "../../lib/DataService";
 import { formatRelativeTime, MOCK_SERVICE } from "../../lib/Common";
@@ -37,12 +36,12 @@ export default function ChatHistory({
         <div className="max-w-4xl mx-auto w-full">
             <div className="flex items-center justify-between mb-6">
                 <h2 className="flex items-center gap-3 text-gray-800 text-xl font-semibold">
-                    <HistoryIcon className="text-purple-600" />
+                    <History className="text-purple-600 h-6 w-6" />
                     Your recent chats
                 </h2>
                 <button className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
                     View all
-                    <ArrowForward className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4" />
                 </button>
             </div>
 

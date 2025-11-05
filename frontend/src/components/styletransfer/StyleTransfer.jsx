@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { Brush, Photo, Refresh } from '@mui/icons-material';
+import { Brush, Image, RefreshCw } from 'lucide-react';
 import DataService from '@/lib/DataService';
 
 export default function StyleTransfer() {
@@ -76,14 +76,14 @@ export default function StyleTransfer() {
             <div className="space-y-4">
                 <div className="flex items-center justify-between">
                     <h2 className="text-xl font-semibold flex items-center gap-2 font-montserrat">
-                        <Brush className="text-purple-500" />
+                        <Brush className="text-purple-500 h-5 w-5" />
                         Artworks
                     </h2>
                     <button
                         onClick={loadStyleImages}
                         className="p-2 hover:bg-purple-50 rounded-full transition-colors"
                     >
-                        <Refresh />
+                        <RefreshCw className="h-5 w-5" />
                     </button>
                 </div>
                 <div className="grid grid-cols-3 gap-3">
@@ -138,14 +138,14 @@ export default function StyleTransfer() {
             <div className="space-y-4">
                 <div className="flex items-center justify-between">
                     <h2 className="text-xl font-semibold flex items-center gap-2 font-montserrat">
-                        <Photo className="text-purple-500" />
+                        <Image className="text-purple-500 h-5 w-5" />
                         Photos
                     </h2>
                     <button
                         onClick={loadContentImages}
                         className="p-2 hover:bg-purple-50 rounded-full transition-colors"
                     >
-                        <Refresh />
+                        <RefreshCw className="h-5 w-5" />
                     </button>
                 </div>
                 <div className="grid grid-cols-3 gap-3">

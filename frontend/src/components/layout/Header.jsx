@@ -3,10 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Podcasts, Email, SmartToy, Menu, Close } from '@mui/icons-material';
-import InsertChartIcon from '@mui/icons-material/InsertChart';
-import ListAltIcon from '@mui/icons-material/ListAlt';
-import AppsIcon from '@mui/icons-material/Apps';
+import { Home, Menu, X, BarChart, List, Grid3x3, Bot } from 'lucide-react';
 
 export default function Header() {
     // Component States
@@ -14,11 +11,11 @@ export default function Header() {
     const pathname = usePathname();
 
     const navItems = [
-        { name: 'Home', path: '/', icon: <Home sx={{ fontSize: 20 }} /> },
-        { name: 'Todo', path: '/todo', icon: <ListAltIcon fontSize="small" /> },
-        { name: 'Plots', path: '/plots', icon: <InsertChartIcon fontSize="small" /> },
-        { name: 'Grids', path: '/styletransfer', icon: <AppsIcon fontSize="small" /> },
-        { name: 'AI Assistant', path: '/chat', icon: <SmartToy fontSize="small" /> }
+        { name: 'Home', path: '/', icon: <Home className="h-5 w-5" /> },
+        { name: 'Todo', path: '/todo', icon: <List className="h-5 w-5" /> },
+        { name: 'Plots', path: '/plots', icon: <BarChart className="h-5 w-5" /> },
+        { name: 'Grids', path: '/styletransfer', icon: <Grid3x3 className="h-5 w-5" /> },
+        { name: 'AI Assistant', path: '/chat', icon: <Bot className="h-5 w-5" /> }
     ];
 
     // UI View
@@ -50,7 +47,7 @@ export default function Header() {
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Toggle menu"
                         >
-                            {isMenuOpen ? <Close className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>
                     </div>
                 </div>

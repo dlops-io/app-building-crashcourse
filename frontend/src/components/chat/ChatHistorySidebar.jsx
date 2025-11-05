@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Add, History } from '@mui/icons-material';
+import { Plus, History } from 'lucide-react';
 import DataService from "../../lib/DataService";
 import { formatRelativeTime } from "../../lib/Common";
 
@@ -43,7 +43,7 @@ export default function ChatHistorySidebar({
                     className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 
                         text-white rounded-lg transition-colors"
                 >
-                    <Add className="w-4 h-4" />
+                    <Plus className="w-4 h-4" />
                     New Chat
                 </button>
             </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { AddCircle, CheckBoxOutlineBlank, Delete, Edit } from '@mui/icons-material';
+import { PlusCircle, Square, Trash2, Edit } from 'lucide-react';
 
 export default function Todo() {
     // Component States
@@ -59,7 +59,7 @@ export default function Todo() {
                         onClick={handleAddTodo}
                         className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2"
                     >
-                        <AddCircle />
+                        <PlusCircle className="h-5 w-5" />
                         Add
                     </button>
                 </div>
@@ -81,7 +81,7 @@ export default function Todo() {
                                         className={`p-1 rounded-full transition-colors ${todo.completed ? 'text-green-500 hover:text-green-600' : 'text-gray-400 hover:text-gray-500'
                                             }`}
                                     >
-                                        <CheckBoxOutlineBlank />
+                                        <Square className="h-5 w-5" />
                                     </button>
 
                                     {editingId === todo.id ? (
@@ -112,14 +112,14 @@ export default function Todo() {
                                                 onClick={() => handleEdit(todo)}
                                                 className="p-1 text-blue-500 hover:text-blue-600 transition-colors"
                                             >
-                                                <Edit fontSize="small" />
+                                                <Edit className="h-4 w-4" />
                                             </button>
                                         )}
                                         <button
                                             onClick={() => handleDelete(todo.id)}
                                             className="p-1 text-red-500 hover:text-red-600 transition-colors"
                                         >
-                                            <Delete fontSize="small" />
+                                            <Trash2 className="h-4 w-4" />
                                         </button>
                                     </div>
                                 </div>
