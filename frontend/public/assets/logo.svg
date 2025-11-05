@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Awesome AI App Icon">
+  <defs>
+    <!-- background gradient -->
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <!-- soft glow -->
+    <radialGradient id="glow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".2"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- rounded squircle background -->
+  <rect x="64" y="64" width="896" height="896" rx="220" fill="url(#g)"/>
+  <rect x="64" y="64" width="896" height="896" rx="220" fill="url(#glow)"/>
+
+  <!-- orbit ring -->
+  <circle cx="512" cy="560" r="300"
+    fill="none"
+    stroke="#fff"
+    stroke-opacity=".65"
+    stroke-width="28"
+    stroke-dasharray="10 24"
+  />
+
+  <!-- smaller + bolder A, optically centered -->
+  <g transform="translate(0,0) scale(0.88) translate(65,70)">
+    <path
+      fill="#fff"
+      d="M512 168L214 864h152l86-200h230l86 200h152L512 168zm61 352h-122l61-140 61 140z"
+    />
+  </g>
+</svg>

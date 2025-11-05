@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Home, Menu, X, BarChart, List, Grid3x3, Bot, MapPin } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
@@ -27,7 +28,13 @@ export default function Header() {
                 <div className="header-container">
                     <div className="header-content">
                         <Link href="/" className="header-logo">
-                            <span className="text-2xl">✨</span>
+                            <Image
+                                src="/assets/logo.svg"
+                                alt="App Logo"
+                                width={32}
+                                height={32}
+                                className="w-8 h-8"
+                            />
                             <h1 className="text-xl font-bold font-montserrat">AC215 Awesome App</h1>
                         </Link>
 
