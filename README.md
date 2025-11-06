@@ -8,6 +8,7 @@ In this tutorial we will go over a react app template and learn:
     * Audio output
     * Image input
     * Plots and graphs
+    * Maps
     * Chat UI
 
 ## Prerequisites
