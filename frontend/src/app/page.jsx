@@ -14,6 +14,27 @@ export default function Home() {
             color: 'text-blue-600 dark:text-blue-400'
         },
         {
+            name: 'Image Classification',
+            description: 'Upload images and get instant AI-powered classification. Identify objects, scenes, and more.',
+            icon: Image,
+            href: '/image',
+            color: 'text-pink-600 dark:text-pink-400'
+        },
+        {
+            name: 'Audio to Text',
+            description: 'Convert audio recordings to text with high accuracy. Transcribe meetings, lectures, and interviews.',
+            icon: Mic,
+            href: '/audio',
+            color: 'text-orange-600 dark:text-orange-400'
+        },
+        {
+            name: 'Text to Audio',
+            description: 'Transform written text into natural-sounding speech. Generate audio from any text content.',
+            icon: Mic2,
+            href: '/text',
+            color: 'text-teal-600 dark:text-teal-400'
+        },
+        {
             name: 'Style Transfer',
             description: 'Transform your images with AI-powered style transfer. Apply artistic styles to your photos.',
             icon: Grid3x3,
@@ -41,27 +62,6 @@ export default function Home() {
             href: '/chat',
             color: 'text-indigo-600 dark:text-indigo-400'
         },
-        {
-            name: 'Image Classification',
-            description: 'Upload images and get instant AI-powered classification. Identify objects, scenes, and more.',
-            icon: Image,
-            href: '/image',
-            color: 'text-pink-600 dark:text-pink-400'
-        },
-        {
-            name: 'Audio to Text',
-            description: 'Convert audio recordings to text with high accuracy. Transcribe meetings, lectures, and interviews.',
-            icon: Mic,
-            href: '/audio',
-            color: 'text-orange-600 dark:text-orange-400'
-        },
-        {
-            name: 'Text to Audio',
-            description: 'Transform written text into natural-sounding speech. Generate audio from any text content.',
-            icon: Mic2,
-            href: '/text',
-            color: 'text-teal-600 dark:text-teal-400'
-        }
     ];
 
     return (
